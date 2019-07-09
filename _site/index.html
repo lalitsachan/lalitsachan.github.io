@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lalit Sachan &middot; Curiosity is the prime mover
+    
+  </title>
+    
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        inlineMath: [['$','$']]
+      }
+    });
+  </script>
+    
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="icon" sizes="16x16 32x32 64x64" href="/public/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6271826-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-6271826-3');
+</script>
+
+ 
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-logo" style="align:center">
+      <img src="/blog_face.jpg" />
+  </div>
+  <div class="sidebar-item">
+    <p>I have created this space for sharing things that i find interesting on Machine Learning and Life in general </p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/archive/">Archive</a>
+        
+      
+    
+      
+    
+
+<!--    <a class="sidebar-nav-item" href="/archive/v.zip">Download</a>-->
+<!--    <a class="sidebar-nav-item" href="">GitHub project</a>-->
+<!--    <span class="sidebar-nav-item">Currently v</span>-->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Lalit Sachan</a>
+            <small>Curiosity is the prime mover</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="//2019/07/09/Feature-Engineering/">
+        Feature Engineering in Machine Learning
+      </a>
+    </h1>
+
+    <span class="post-date">09 Jul 2019</span>
+
+    <p>For a good time I believed that you can’t really give a long talk on feature engineering which will be relevant across multiple problem spaces. This belief originated from having seen people;  calling problem specific special treatment of data; feature engineering . However , over the years I have unconsciously gathered pretty standard ways of treating different kind of features which are applicable irrespective of the kind of problem that you are working with. This of course doesn’t mean that there is no problem specific feature engineering , it simply implies that; you CAN have a good length discussion on generic feature engineering which applies well across different problems .</p>
+
+<p>Sequence of different tips and tricks mentioned here doesn’t hold much meaning . I am simply writing/coding away things as and when I recall them here .</p>
+
+<h2 id="1-how-to-represent-cyclic-features">1. How to represent cyclic features</h2>
+
+<p>An intuitive example of such data columns are months or weekday numbers. Problem with simply giving them numbers is that the representation doesn’t really make sense . Why ?</p>
+
+<p>Lets have a look :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Month</th>
+      <th style="text-align: center">Coded_Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">January</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">February</td>
+      <td style="text-align: center">2</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">March</td>
+      <td style="text-align: center">3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">April</td>
+      <td style="text-align: center">4</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">May</td>
+      <td style="text-align: center">5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">June</td>
+      <td style="text-align: center">6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">July</td>
+      <td style="text-align: center">7</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">August</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">September</td>
+      <td style="text-align: center">9</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">October</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">November</td>
+      <td style="text-align: center">11</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">December</td>
+      <td style="text-align: center">12</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>December isn’t really <code class="highlighter-rouge">(12-1=11)</code>  months away from January. The next guy is January, they are just <code class="highlighter-rouge">1</code> month apart. Their numerical coding which we intend to use as a simple numeric column , doesn’t represent the same information.</p>
+
+<p>A simple trick , in such cases of cyclical data is to use cyclical functions for encoding the values.</p>
+
+<script type="math/tex; mode=display">\text{months_sin} = sin(\frac{2*\pi*Months}{12})</script>
+
+<p>In general this will be :</p>
+
+<script type="math/tex; mode=display">\text{x_sin} = sin(\frac{2*\pi*x}{max(x)})</script>
+
+<p>There is still a slight issue, simple plot of transformed values will clarify .</p>
+
+<p><img src="/images/months_sin.png" alt="month_sin" /></p>
+
+<p>You can see that, now values start to turn up cyclically to have difference among them reducing as months near to end of year. The issue that I was talking about this approach , will become apparent if you look at values of month <code class="highlighter-rouge">2</code> and <code class="highlighter-rouge">4</code> . They have same values . The way to counter this is to use two cyclical functions ; both <code class="highlighter-rouge">sin </code> and <code class="highlighter-rouge">cos</code>. Any cyclic numeric column will be encoded as two columns, sin and cos transformations like this :</p>
+
+<script type="math/tex; mode=display">\text{x_sin} = sin(\frac{2*\pi*x}{max(x)}) \\
+\text{x_cos} = cos(\frac{2*\pi*x}{max(x)})</script>
+
+<p>They look truly cyclic now. All the values in 2 dimensions are different and retain distances among them as per their cyclic nature.  :</p>
+
+<p><img src="/images/sin_cos_together.png" alt="month_sin" /></p>
+
+<p>Here is a quick function for the same :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">code_cyclic_features</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="p">,</span><span class="n">drop_cols</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+    <span class="n">max_val</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+    
+    <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="o">+</span><span class="s">'_sin'</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">/</span><span class="n">max_val</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="o">+</span><span class="s">'_cos'</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">/</span><span class="n">max_val</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">drop_cols</span><span class="p">:</span>
+      <span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+  <span class="k">return</span> <span class="n">data</span>   	      
+</code></pre></div></div>
+
+<h2 id="2-coding-categorical-features-as-dummiesflags">2. Coding Categorical Features as dummies/flags</h2>
+
+<p>Ignoring the discussion where you can convert the categorical feature to some numeric representation without changing the sense of information  .</p>
+
+<p>Everybody starts coding categorical columns by creating <code class="highlighter-rouge">n-1</code> dummies for n categories . However we should keep in mind that if any category doesn’t have enough observations/data, we won’t be able to extract consistent/reliable patterns from it. Its a common practice to ignore such categories. You have to decide a frequency cutoff. There isn’t much point in searching the depths of internet to find a good value for this cutoff. Keep the tradeoff in mind , higher cutoff will lead to information loss and lower cutoff will lead to data explosion and overfitting.</p>
+
+<p>Here is a quick python function which will enable you to create dummies with frequency cutoff.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">code_categorical_to_dummies</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="p">,</span><span class="n">frequency_cutoff</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+        <span class="n">freq_table</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="n">cats</span><span class="o">=</span><span class="n">freq_table</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">freq_table</span><span class="o">&gt;</span><span class="n">frequency_cutoff</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="o">+</span><span class="s">'_'</span><span class="o">+</span><span class="n">cat</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">==</span><span class="n">cat</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        
+        <span class="k">del</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+        
+        
+    <span class="k">return</span> <span class="n">data</span>
+ 
+</code></pre></div></div>
+
+<h2 id="3-categorical-embeddings">3. Categorical Embeddings</h2>
+
+<p>Even when you use frequency cutoff , sometimes creating dummies results in data explosion as all of the categories might have good number of observation. Consider a data which has 11 columns where 10 are numeric and 11th column has 50 eligible categories . You’ll end up with 60 columns in the data. This could be a problem if you further decide to build a <code class="highlighter-rouge">randomforest</code> or <code class="highlighter-rouge">gbm</code> family models. You’ll decide the max_features parameter to be some random subset of these 60 columns in your data. By sheer number, the flag variables coming from a single column will be selected a lot more and , 10 numeric columns don’t get enough exposure due to inbuilt nature of the algorithm. We’d like to represent these flag variables at much lower dimensions than creating 50 separate columns in this scenario.</p>
+
+<p>What comes to your rescue is embedding derived from neural networks which work as auto encoders . Here is an example in code which will help you in understanding the concept .</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">file</span> <span class="o">=</span> <span class="s">r'/Users/lalitsachan/Dropbox/0.0 Data/loans data.csv'</span>
+<span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s">'State'</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>47
+</code></pre></div></div>
+
+<p>Column State here has 47 unique values . We can create dummies but that will lead to having 47 one hot encoded columns . Lets see how we can come up with model driven embeddings for this column and bring down the dimension for the same .</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dummy_data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'State'</span><span class="p">],</span><span class="n">prefix</span><span class="o">=</span><span class="s">'State'</span><span class="p">)</span>
+<span class="n">dummy_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>47
+</code></pre></div></div>
+
+<p>Lets prepare our response which is predicting interest on the basis of columns in the data. Some preprocessing on the response because it has come as character because of ‘%’ sign in the data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'Interest.Rate'</span><span class="p">]</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"</span><span class="si">%</span><span class="s">"</span><span class="p">,</span><span class="s">""</span><span class="p">),</span><span class="n">errors</span><span class="o">=</span><span class="s">'coerce'</span><span class="p">)</span>
+<span class="n">y</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span><span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span><span class="p">,</span><span class="n">Input</span>
+
+<span class="n">embedding_dim</span><span class="o">=</span><span class="mi">3</span>
+<span class="n">inputs</span><span class="o">=</span><span class="n">Input</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">dummy_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],))</span>
+<span class="n">embedded_output</span><span class="o">=</span><span class="n">Dense</span><span class="p">(</span><span class="n">embedding_dim</span><span class="p">)(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="n">outputs</span><span class="o">=</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)(</span><span class="n">embedded_output</span><span class="p">)</span>
+<span class="n">model</span><span class="o">=</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="o">=</span><span class="n">outputs</span><span class="p">)</span>
+
+<span class="n">embedder</span><span class="o">=</span><span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span><span class="n">outputs</span><span class="o">=</span><span class="n">embedded_output</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p>We are going to use output of embedder as our transformed data. Embedding is being driven by predicting the response .</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span><span class="o">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span><span class="n">loss</span><span class="o">=</span><span class="s">'mse'</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dummy_data</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Once this is done , we can use embedder to get out transformed data, new low dimensional representation of 47 one hot encoded columns</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">low_dim</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">embedder</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dummy_data</span><span class="p">),</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'emb1'</span><span class="p">,</span><span class="s">'emb2'</span><span class="p">,</span><span class="s">'emb3'</span><span class="p">])</span>
+<span class="n">low_dim</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="/images/image-20190603152419221.png" style="height:200px" /></p>
+
+<p>We can use the same trained embedder for test/val data as well.</p>
+
+<h2 id="4-feature-selection-using-feature-importance">4. Feature Selection using feature importance</h2>
+
+<p>Its a common feature of many tree based ensemble method (both bagging and boosting), feature importance , which can be used for quick feature selection . But many sources failed to mention, where to draw the line. What level of feature importance should be set as cutoff , below which you can drop all the columns from further considerations .</p>
+
+<p>Truth is , people don’t mention this because as such there is no fixed cutoff. And meaning of numeric value of feature importance can be data dependent. However a neat little trick can be used every time. You can add a random noise column as one of the features . Any column which gets its feature importance value below that, can be considered doing worse than white noise , which we know is not related to data and hence can be dropped.</p>
+
+<p>Here is a quick example using one of the pre loaded datasets in sklearn.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_boston</span>
+<span class="n">boston</span><span class="o">=</span><span class="n">load_boston</span><span class="p">()</span>
+
+<span class="n">X</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">boston</span><span class="o">.</span><span class="n">data</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">boston</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">boston</span><span class="o">.</span><span class="n">target</span>
+</code></pre></div></div>
+
+<p>We’ll add random noise to the data</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span><span class="p">[</span><span class="s">'white_noise'</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</code></pre></div></div>
+
+<p>Now lets build a quick random Forest model and check feature importance to see which features we can safely drop before further more detailed experiments with the data</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="n">rf</span><span class="o">=</span><span class="n">RandomForestRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">imp_data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'imp'</span><span class="p">:</span><span class="n">rf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span><span class="s">'cols'</span><span class="p">:</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">})</span>
+<span class="n">imp_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s">'imp'</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/images/image-20190603161617622.png" style="height:500px" /></p>
+
+<p>We can safely say that , we can drop columns <code class="highlighter-rouge">INDUS</code>, <code class="highlighter-rouge">RAD</code>, <code class="highlighter-rouge">ZN</code>, <code class="highlighter-rouge">CHAS</code> in context of predicting the target for this problem .</p>
+
+<p>Few notes on the takeaways/followups  .</p>
+
+<ol>
+  <li>This is not an exhaustive list by any means. I discussed few things which I see; are not commonly discussed or are generally looked over. I’ll make additions if I recall something else.</li>
+  <li>Whenever I discussed one of the tricks, I skimmed over other details. For example , when we were talking about categorical embeddings , we can very well first ignore categories which have low frequencies , create dummies for the rest and then go for categorical embeddings .</li>
+  <li>Feel free to let me know if you’d like me to add some discussion as part/addition to the list above.</li>
+</ol>
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <span class="pagination-item older">Older</span>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+
+
+        
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

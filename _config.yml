@@ -1,0 +1,31 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+# relative_permalinks: true
+
+# Setup
+title:               Lalit Sachan
+tagline:             'Curiosity is the prime mover'
+description:         'I have created this space for sharing things that i find interesting on Machine Learning and Life in general '
+url:                 https://www.edvancer.in
+baseurl:             ''
+paginate:            5
+
+# About/contact
+author:
+  name:              Lalit Sachan
+  url:               https://twitter.com/lalitsachan
+  email:             sac.lalit@gmail.com
+
+# Custom vars
+#version:             1.0.0
+
+paginate: 5
+
+plugins: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"
+
+gravatar_md5: 7448a28762ce67da3155fb519ac6760f
+
