@@ -3,15 +3,18 @@ layout: page
 title: About
 ---
 
-<p class="message">
-  If you use a rare probability , low expectation example to refute an argument or a hypothesis; we might not make good friends.
-</p>
+Working as an adviser, consultant and trainer for Machine Learning/AI tools, techniques and applications. My Special areas of interest are :
+
+* Usage of deep learning models to solve problems in Natural Language Processing 
+* Drawing inference and interpretation from non-linear models 
+* Making machine learning theory and applications more approachable for ML practitioners
+
 
 [Find me On Linkedin](https://www.linkedin.com/in/lalitsachan/){:target="_blank"}
 
 [Follow me On Twitter](https://twitter.com/lalitsachan){:target="_blank"}
 
-## Professional Career So Far
+## On the timeline
 
 2004-2008 : **IIT Kanpur ( Bachelors in Biosciences & Bio-Enginnering )**, Made lifelong friends, A time I can live thousands time over.
 
