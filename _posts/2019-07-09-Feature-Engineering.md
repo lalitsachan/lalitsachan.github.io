@@ -209,7 +209,7 @@ As we move towards complex algorithms , need for manual feature creation goes do
 
 However ratio features are the ones which different algorithms are consistently bad at emulating . If you think that in context of the business problem that you are trying to solve; ratio of features in data can play definitive role then you should create them manually; instead of relying on any algorithm to extract that pattern. 
 
-You can find a detailed discussion about what kind of feature transformation different algorithms can emulate and what they can not : https://bit.ly/2UNDgED 
+You can find a detailed discussion about what kind of feature transformation different algorithms can emulate and what they can not : [here](https://bit.ly/2UNDgED)
 
 Few notes on the takeaways/followups  .
 
