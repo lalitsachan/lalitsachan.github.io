@@ -213,7 +213,7 @@ However ratio features are the ones which different algorithms are consistently 
 A simple example of ratio variable can be utilisation of credit cards [ratio between expense and limit]
 ```
 
-You can find a detailed discussion about what kind of feature transformation different algorithms can emulate and what they can not : [here](https://bit.ly/2UNDgED){ :target="_blank"}
+You can find a detailed discussion about what kind of feature transformation different algorithms can emulate and what they can not : [here](https://bit.ly/2UNDgED){ :target='_blank'}
 
 Few notes on the takeaways/followups  .
 
