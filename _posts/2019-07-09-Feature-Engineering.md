@@ -167,7 +167,7 @@ low_dim.head()
 
 We can use the same trained embedder for test/val data as well.
 
-## 4. Feature Selection using feature importance 
+## 4. Feature Selection using feature importance
 
 Its a common feature of many tree based ensemble method (both bagging and boosting), feature importance , which can be used for quick feature selection . But many sources failed to mention, where to draw the line. What level of feature importance should be set as cutoff , below which you can drop all the columns from further considerations .
 
@@ -201,9 +201,15 @@ imp_data.sort_values('imp',ascending=False)
 
 <img src="/images/image-20190603161617622.png" style="height:500px" />
 
-
-
 We can safely say that , we can drop columns `INDUS`, `RAD`, `ZN`, `CHAS` in context of predicting the target for this problem . 
+
+## 5. Ratio Features
+
+As we move towards complex algorithms , need for manual feature creation goes down as many of the transformations can be learned by the algorithms of sufficient complexity ( Neural Networks , Boosting Machines ). Example of such transformations can be features created as interaction variables , log transformations or polynomials of original features in the data. 
+
+However ratio features are the ones which different algorithms are consistently bad at emulating . If you think that in context of the business problem that you are trying to solve; ratio of features in data can play definitive role then you should create them manually; instead of relying on any algorithm to extract that pattern. 
+
+You can find a detailed discussion about what kind of feature transformation different algorithms can emulate and what they can not : https://bit.ly/2UNDgED 
 
 Few notes on the takeaways/followups  .
 
