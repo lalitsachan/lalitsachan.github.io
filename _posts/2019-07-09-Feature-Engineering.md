@@ -170,8 +170,8 @@ We can use the same trained embedder for test/val data as well.
 ## 4. Feature Selection using feature importance
 
 ```
-Important Update :While this idea is good and sound. Implementation of feature importance in R/Python is not proper . And you should be cautious about using the same . You'll find more details : 
-        [here](https://explained.ai/rf-importance/){:target="_blank"}
+Important Update :While this idea is good and sound. Implementation of feature importance in R/Python is not proper . And you should be cautious about using the same . You'll find more details here : 
+https://explained.ai/rf-importance/
 ```
 
 Its a common feature of many tree based ensemble method (both bagging and boosting), feature importance , which can be used for quick feature selection . But many sources failed to mention, where to draw the line. What level of feature importance should be set as cutoff , below which you can drop all the columns from further considerations .
