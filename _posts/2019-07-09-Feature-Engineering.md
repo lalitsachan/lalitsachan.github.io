@@ -169,6 +169,8 @@ We can use the same trained embedder for test/val data as well.
 
 ## 4. Feature Selection using feature importance
 
+<u>***Important Update :***</u> <u>While this idea is good and sound. Implementation of feature importance in R/Python is not proper . And you should be cautious about using the same . You'll find more details  [here](https://bit.ly/2UNDgED){:target="_blank"}</u>
+
 Its a common feature of many tree based ensemble method (both bagging and boosting), feature importance , which can be used for quick feature selection . But many sources failed to mention, where to draw the line. What level of feature importance should be set as cutoff , below which you can drop all the columns from further considerations .
 
 Truth is , people don't mention this because as such there is no fixed cutoff. And meaning of numeric value of feature importance can be data dependent. However a neat little trick can be used every time. You can add a random noise column as one of the features . Any column which gets its feature importance value below that, can be considered doing worse than white noise , which we know is not related to data and hence can be dropped.
@@ -213,7 +215,7 @@ However ratio features are the ones which different algorithms are consistently 
 A simple example of ratio variable can be utilisation of credit cards [ratio between expense and limit]
 ```
 
-You can find a detailed discussion about what kind of feature transformation different algorithms can emulate and what they can not : [here](https://bit.ly/2UNDgED){:target="_blank"}
+You can find a detailed discussion about what kind of feature transformation different algorithms can emulate and what they can not : [here](https://explained.ai/rf-importance/){:target="_blank"}
 
 Few notes on the takeaways/followups  .
 
