@@ -77,7 +77,7 @@ def code_cyclic_features(data,columns,drop_cols=True):
 
 Ignoring the discussion where you can convert the categorical feature to some numeric representation without changing the sense of information  . 
 
-Everybody starts coding categorical columns by creating `n-1` dummies for n categories . However we should keep in mind that if any category doesn't have enough observations/data, we won't be able to extract consistent/reliable patterns from it. Its a common practice to ignore such categories. You have to decide a frequency cutoff. There isn't much point in searching the depths of internet to find a good value for this cutoff. Keep the tradeoff in mind , higher cutoff will lead to information loss and lower cutoff will lead to data explosion and overfitting. 
+Everybody starts coding categorical columns by creating `n-1` dummies for n categories . However we should keep in mind that if any category doesn't have enough observations/data, we won't be able to extract consistent/reliable patterns from it. It's a common practice to ignore such categories. You have to decide a frequency cutoff. There isn't much point in searching the depths of internet to find a good value for this cutoff. Keep the tradeoff in mind , higher cutoff will lead to information loss and lower cutoff will lead to data explosion and overfitting. 
 
 Here is a quick python function which will enable you to create dummies with frequency cutoff.
 
@@ -126,7 +126,7 @@ dummy_data.shape[1]
 47
 ```
 
-We'll take the columns as our response as well. The network that we'll be building [ an autoencoder] will be solving a pseudo problem. Its job is to take this one hot encoded representation [ dummy_data] and spit out the same values as the outcome. I call it a pseudo problem to solve because  i am not really interested in the model which takes the input and spits it out as outcome perfectly. What is actually of interest to me is the comrpession that the input goes through in the intermediate layers of this model. Goal to build this psuedo network well is to ensure that this compression is not leading to informaiton loss, that can only be said outcome of the network matches wiith the input.
+We'll take the columns as our response as well. The network that we'll be building [ an autoencoder] will be solving a pseudo problem. Its job is to take this one hot encoded representation [ dummy_data] and spit out the same values as the outcome. I call it a pseudo problem to solve because  i am not really interested in the model which takes the input and spits it out as outcome perfectly. What is actually of interest to me is the compression that the input goes through in the intermediate layers of this model. Goal to build this pseudo network well is to ensure that this compression is not leading to information loss, that can only be said, if outcome of the network matches with the input.
 
 ```python
 y=dummy_data
@@ -174,11 +174,11 @@ Important Update :While this idea is good and sound. Implementation of feature i
 https://explained.ai/rf-importance/
 ```
 
-Its a common feature of many tree based ensemble method (both bagging and boosting), feature importance , which can be used for quick feature selection . But many sources failed to mention, where to draw the line. What level of feature importance should be set as cutoff , below which you can drop all the columns from further considerations .
+It's a common feature of many tree based ensemble method (both bagging and boosting), feature importance , which can be used for quick feature selection . But many sources failed to mention, where to draw the line. What level of feature importance should be set as cutoff , below which you can drop all the columns from further considerations .
 
 Truth is , people don't mention this because as such there is no fixed cutoff. And meaning of numeric value of feature importance can be data dependent. However a neat little trick can be used every time. You can add a random noise column as one of the features . Any column which gets its feature importance value below that, can be considered doing worse than white noise , which we know is not related to data and hence can be dropped.
 
-Here is a quick example using one of the pre loaded datasets in sklearn. 
+Here is a quick example using one of the pre loaded datasets in sk-learn. 
 
 ```python
 from sklearn.datasets import load_boston
