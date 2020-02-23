@@ -126,11 +126,10 @@ dummy_data.shape[1]
 47
 ```
 
-Lets prepare our response which is predicting interest on the basis of columns in the data. Some preprocessing on the response because it has come as character because of '%' sign in the data.
+We'll take the columns as our response as well. The network that we'll be building [ an autoencoder] will be solving a pseudo problem. Its job is to take this one hot encoded representation [ dummy_data] and spit out the same values as the outcome. I call it a pseudo problem to solve because  i am not really interested in the model which takes the input and spits it out as outcome perfectly. What is actually of interest to me is the comrpession that the input goes through in the intermediate layers of this model. Goal to build this psuedo network well is to ensure that this compression is not leading to informaiton loss, that can only be said outcome of the network matches wiith the input.
 
 ```python
-y=pd.to_numeric(data['Interest.Rate'].str.replace("%",""),errors='coerce')
-y.fillna(y.mean(),inplace=True)
+y=dummy_data
 ```
 
 
@@ -141,8 +140,9 @@ from keras.layers import Dense,Input
 
 embedding_dim=3
 inputs=Input(shape=(dummy_data.shape[1],))
-embedded_output=Dense(embedding_dim)(inputs)
-outputs=Dense(1)(embedded_output)
+dense1=Dense(20,activation='relu')(inputs)
+embedded_output=Dense(embedding_dim)(dense1)
+outputs=Dense(dummy_data.shape[1],activation='softmax')(embedded_output)
 model=Model(inputs=inputs,outputs=outputs)
 
 embedder=Model(inputs=inputs,outputs=embedded_output)
@@ -152,8 +152,8 @@ embedder=Model(inputs=inputs,outputs=embedded_output)
 We are going to use output of embedder as our transformed data. Embedding is being driven by predicting the response .
 
 ```python
-model.compile(optimizer='adam',loss='mse')
-model.fit(dummy_data,y,epochs=100,batch_size=100)
+model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
+model.fit(dummy_data,y,epochs=150,batch_size=100)
 ```
 
 Once this is done , we can use embedder to get out transformed data, new low dimensional representation of 47 one hot encoded columns 
