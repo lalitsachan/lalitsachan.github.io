@@ -51,7 +51,7 @@ In case of boosting machines there are two things which are different :
 
 * First : $F(X_i)= f_1(X_i)+f_2(X_i) ..... f_n(X_i)$
 
-* Second : These individual models are not independent of each other. In fact each subsequent $f_j(X_i)$ tries to improve upon the individuals models added thus far. In other words; every subsequent model tries to 'boost' the performance of the model built before it.
+* Second : These individual models are not independent of each other. In fact each subsequent $f_j(X_i)$ tries to improve upon the individual models added thus far. In other words; every subsequent model tries to 'boost' the performance of the model built before it.
 
 ### <u>How is $F(X_i)$ built ?</u>
 
@@ -115,7 +115,7 @@ If you realise, $(y_i - F_t)$ is nothing but error of the model so far . An exam
 
 As you can see here , each subsequent individual model is building predictions for the errors which could not be handled by the models so far .
 
-##### <u>GBM for classification</u>
+##### **<u>GBM for classification</u>**
 
 It's pretty intuitive and hence clear for regression that subsequent models that we are adding to build $F$ ;  are regression models themselves. 
 
