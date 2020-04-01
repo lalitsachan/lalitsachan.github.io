@@ -6,9 +6,18 @@ comments: true
 
 ---
 
-I have seen this too many times now; while discussing gradient boosting machines that; some ML practitioners; don't really understand what happens under the hood. Very often their understanding of boosting machines, starts with AdaBoost; and then kinda stops there. 
+ **<u>Why I am writing this</u>**: I have seen this too many times now; while discussing gradient boosting machines that; some ML practitioners; don't really understand what happens under the hood. Very often their understanding of boosting machines, starts with AdaBoost; and then kinda stops there. 
 
-Few mathematical ideas (Anchor Points) that, i will not be elaborating in this post are given as is below :
+**<u>Who is this best suited for :</u>** If you know what boosting machines are; but lack clarity on what happens under the hood. 
+
+Few things that I have not discussed [so, if you are here for a complete discussion; necessarily including what I have skipped, probably you should save your time and refer to some other source]:
+
+* Relationship between $\eta$ and number of steps [boosted models ]
+* In theory, individual models can be anything , but in most implementations you'd find these to be decision trees
+* Individual models need to be weak learners 
+* **I have not discussed line search** here to find optimal fraction to multiply the predictions from $f_{t+1}$ before adding it to update $F_t$ 
+
+Few mathematical ideas (Anchor Points) that, i will not be elaborating in this post are given; as is, below :
 
 * **<u>Anchor Point 1</u>**: Gradient descent for parametric model requires us to change parameter by this amount in order to reach to the optimal value of cost function; starting at some random value of parameters : $$\Delta\beta \rightarrow -\eta\frac{\delta C}{\delta\beta}$$ , where $$C$$ is the cost function 
 * **<u>Anchor Point 2</u>**: Regression Problems
@@ -46,7 +55,7 @@ In case of boosting machines there are two things which are different :
 
 ### <u>How is $F(X_i)$ built ?</u>
 
-We just said that each $f_j(X_i)$ is added sequentially and its 'boosts' the model built before it. What exactly does this mean ? 
+We just said that each $f_j(X_i)$ is added sequentially and it 'boosts' the model built before it. What exactly does this mean ? 
 
 Let's consider that someone [somehow] has built $F(X_i)$ so far with t individual boosted models. We'll represent the overall model also as $F_t(X_i)$ , to track its development . 
 
@@ -68,7 +77,7 @@ $$ C = \mathcal{L}(y_i,F_t(X_i))$$
 
 Value of $\mathcal{L}$ for regression and classification is given at the beginning of this post above under anchor points 2 and 3. 
 
-Idea in Anchor Point 1, pertains to parameters. In context of gradient boosting machines; **Key Idea** is that instead of parameter change we are introducing small changes in the our model $F_t$ , and this change is the new individual model being added in the sequence, that is $f_{t+1}$ . Following the idea of gradient descent :
+Idea in Anchor Point 1, pertains to parameters. In context of gradient boosting machines; **Key Idea** is that instead of parameter change we are introducing small changes in our model $F_t$ , and this change is the new individual model being added in the sequence, that is $f_{t+1}$ . Following the idea of gradient descent :
 
 $$
 f_{t+1} \rightarrow -\eta \frac{\delta C}{\delta F_t}
@@ -144,16 +153,10 @@ Couple of key important details to understand from here
 
 * $\eta(y_i-p_i)$ , clearly is not a target for a classification model. **Each individual model in GBM for classification is a regression model**
 
-* probability outcome from $F_t$ is **NOT** simply summation of probability outcomes from $f_1,f_2 ....$ . In fact the relationship is pretty complex as you can see here 
+* Probability outcome from $F_t$ is **NOT** simply summation of probability outcomes from $f_1,f_2 ....$ . In fact the relationship is pretty complex as you can see here 
 
   * $p_t = \frac{1}{1+e^{-F_t}}$
   * $F_{t+1} = F_t + f_{t+1}$
   * $p_{t+1} = \frac{1}{1+e^{-F_{t+1}}} = \frac{p_t}{p_t+(1-p_t)e^{-f_{t+1}}}$ 
 
-I hope this discussion brings some clarity into; how GBM actually works. There are many nuances that i haven't gone into detail here . Some of them are listed here:
-
-* Relationship between $\eta$ and number of steps [boosted models ]
-* In theory, individual models can be anything , but in most implementations you'd find these to be decision trees
-* Individual models need to be weak learners 
-* **I have not discussed line search** here to find optimal fraction to multiply the predictions from $f_{t+1}$ before adding it to update $F_t$ 
-
+I hope this discussion brings some clarity into; how GBMs actually work [ especially for classification ]. 
