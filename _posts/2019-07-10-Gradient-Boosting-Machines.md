@@ -64,6 +64,8 @@ Cost for any kind of predictive problem is function of real values and predictio
 
 $$ C = \mathcal{L}(y_i,F_t(X_i))$$
 
+
+
 Value of $\mathcal{L}$ for regression and classification is given at the beginning of this post above under anchor points 2 and 3. 
 
 Idea in Anchor Point 1, pertains to parameters. In context of gradient boosting machines; **Key Idea** is that instead of parameter change we are introducing small changes in the our model $F_t$ , and this change is the new individual model being added in the sequence, that is $f_{t+1}$ . Following the idea of gradient descent :
@@ -71,6 +73,8 @@ Idea in Anchor Point 1, pertains to parameters. In context of gradient boosting 
 $$
 f_{t+1} \rightarrow -\eta \frac{\delta C}{\delta F_t}
 $$
+
+
 
 To be clear , $f_{t+1}$ is a model [ and is being used as a parallel to $\Delta\beta$ ]. It doesn't make sense to say that it 'equals' the quantity on the RHS above. 
 
@@ -90,6 +94,8 @@ f_{t+1} &\rightarrow -\eta \frac{\delta C}{\delta F_t}
 \\ &\rightarrow \eta (y_i -F_t)
 \end{align}
 $$
+
+
 If you realise, $(y_i - F_t)$ is nothing but error of the model so far . An example with target table should make things clear .
 
 | target for $f_1$ = $y_i$ | Predictions of $f_1$ | target for $f_2$ = $\eta(y_i - f_1)$ | Predictions of $f_2$ | Target for $f_3$ = $\eta(y_i -f_1-f_2)$ |
@@ -118,7 +124,11 @@ C &= -\Big[ y_i log(p_i)+(1-y_i)log(1-p_i) \Big]
 \\ &= -\Big[y_i*F_t - log(1+e^{F_t})\Big]
 \end{align}
 $$
+
+
 gradient expressions will be as follows : 
+
+
 $$
 \begin{align}
 f_{t+1} &\rightarrow -\eta \frac{\delta C}{\delta F_t}
@@ -128,6 +138,8 @@ f_{t+1} &\rightarrow -\eta \frac{\delta C}{\delta F_t}
 \\ &\rightarrow \eta (y_i-p_i)
 \end{align}
 $$
+
+
 Couple of key important details to understand from here 
 
 * $\eta(y_i-p_i)$ , clearly is not a target for a classification model. **Each individual model in GBM for classification is a regression model**
