@@ -113,7 +113,7 @@ For continuous distributions ; if the pdf is given as $f(x)$ then
 
 #### What does it look like 
 
-![](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/uniform_dis.png)
+![](/images/uniform_dis.png)
 
 ## Bernoulli's Distribution [Discrete]
 
@@ -155,7 +155,7 @@ $$
 
 #### What does it look like
 
-![Bernoulli](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/Bernoulli.png)
+![Bernoulli](/images/Bernoulli.png)
 
 Life is nothing but a sequence of countless Bernoulli Trials .
 
@@ -228,7 +228,7 @@ $$
 
 #### What does it look like 
 
-![binom](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/binom.png)
+![binom](/images/binom.png)
 
 #### CDF [cumulative density function]
 
@@ -347,7 +347,7 @@ $$
 
 #### What does it look like
 
-![Poisson](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/Poisson.png)
+![Poisson](/images/Poisson.png)
 
 Notice, since variance is $\lambda$ , for higher values of $\lambda$ ; the distribution is becoming more spread out.
 
@@ -427,7 +427,7 @@ $$
 $$
 Easiest and very intuitive to understand that expression $te^{-\lambda t}$ goes to 0 as $t \to \infty$ is to look at its plot 
 
-![xexp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/xexp.jpg)
+![xexp](/images/xexp.jpg)
 
 so ,
 $$
@@ -462,7 +462,7 @@ E[X^2]&=\int\limits_{0}^{\infty}t^2\lambda e^{-\lambda t}dt
 $$
 Graph for $t^2e^{-\lambda t}$ looks like this 
 
-![x2exp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/x2exp.jpg)
+![x2exp](/images/x2exp.jpg)
 
 clearly the first term in the expression above is going to be simply 0 again.
 $$
@@ -480,7 +480,7 @@ $$
 
 #### What does it look like
 
-![](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/exp.png)
+![](/images/exp.png)
 
 #### An example
 
