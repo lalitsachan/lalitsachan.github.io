@@ -39,14 +39,18 @@ Consider a gambling party where the host has gone bonkers and is asking guests t
 
 We can start by assuming there are 72 [ the number doesn't really matter ] people in the party . Since the dice is fair; we can assume that each of $\{1,2,3,4,5,6\}$ will be obtained by 12 guests. 
 
-* So the money lost by host  $=12*6 + 12* 5 + 12 *4 +12*3 +12*2 = \$ 240$ 
-* money gained by host $=12*10 = \$120$
+* So the money lost by host  $ =12X6 + 12X 5 + 12X4 +12X3 +12X2 = \$ 240 $ 
+* money gained by host $=12X10 = \$120$
 * Overall money lost by host $= 240 - 120 = \$120$
 * Money lost per player $\frac{\$120}{72}=\$1.67$
 
 A simpler way of doing this will be to multiply probability of each outcome with the outcome and sum them. 
 
-Average gain  $=-6*\frac{1}{6}-5*\frac{1}{6}-4*\frac{1}{6}-3**\frac{1}{6}-2*\frac{1}{6}+10*\frac{1}{6}=\$1.67$
+Average gain
+
+$$
+=-6*\frac{1}{6}-5*\frac{1}{6}-4*\frac{1}{6}-3**\frac{1}{6}-2*\frac{1}{6}+10*\frac{1}{6}=\$1.67
+$$
 
 This is also known as expected value of a distribution [or mean]. A formal expression for the same will be 
 
@@ -123,7 +127,7 @@ For continuous distributions ; if the pdf is given as $f(x)$ then
 
 #### What does it look like 
 
-![](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/uniform_dis.png)
+![](/images/uniform_dis.png)
 
 ## Bernoulli's Distribution [Discrete]
 
@@ -166,7 +170,7 @@ $$
 
 #### What does it look like
 
-![Bernoulli](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/Bernoulli.png)
+![Bernoulli](/images/Bernoulli.png)
 
 Life is nothing but a sequence of countless Bernoulli Trials .
 
@@ -246,7 +250,7 @@ $$
 
 #### What does it look like 
 
-![binom](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/binom.png)
+![binom](/images/binom.png)
 
 #### CDF [cumulative density function]
 
@@ -260,7 +264,7 @@ Many at times , probability of an instance is not very useful. And it's better t
 for a large clinical trial where there were 1000 patients and probability of success was 20% . answer following questions [I have added R codes, wherever needed]
 
 * whats the expected number of cured patients = np = 1000*0.2=200
-* whats the expected standard deviation across multiple such clinical trials $= \sqrt{npq}=\sqrt{1000*0.2*0.8} =12.6$
+* whats the expected standard deviation across multiple such clinical trials $= \sqrt{npq}=\sqrt{1000X0.2X0.8} =12.6$
 
 ```R
 # whats the probability that 200 of the patients will be cured
@@ -373,7 +377,7 @@ $$
 
 #### What does it look like
 
-![Poisson](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/Poisson.png)
+![Poisson](/images/Poisson.png)
 
 Notice, since variance is $\lambda$ , for higher values of $\lambda$ ; the distribution is becoming more spread out.
 
@@ -469,7 +473,7 @@ $$
 
 Easiest and very intuitive to understand that expression $te^{-\lambda t}$ goes to 0 as $t \to \infty$ is to look at its plot 
 
-![xexp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/xexp.jpg)
+![xexp](/images/xexp.jpg)
 
 so ,
 
@@ -509,7 +513,7 @@ $$
 
 Graph for $t^2e^{-\lambda t}$ looks like this 
 
-![x2exp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/x2exp.jpg)
+![x2exp](/images/x2exp.jpg)
 
 Clearly the first term in the expression above is going to be simply 0 again.
 
@@ -530,7 +534,7 @@ $$
 
 #### What does it look like
 
-![](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/exp.png)
+![](/images/exp.png)
 
 #### An example
 
