@@ -318,7 +318,7 @@ Ah i guess we are stuck now. We'll have to kill this beast in parts and then com
 
 $$
 \begin{align}
-\lim\limits_{n\to\infty}\frac{!n}{!(n-x)}*\frac{1}{n^x} &= \frac{n*(n-1)*\cdots*(n-x+1)*(n-x)*\cdots2*1}{(n-x)*\cdots*2*1}*\frac{1}{n*n*\cdots*n}
+\lim\limits_{n\to\infty}\frac{!n}{!(n-x)}*\frac{1}{n^x} &= \frac{n*(n-1)*\cdots*(n-x+1)*(n-x)*\cdots2*1}{[(n-x)*\cdots*2*1]*[n*n*\cdots*n]}
 \\&=1*\Big(1-\frac{1}{n}\Big)*\Big(1-\frac{2}{n}\Big)*\cdots*\Big(1-\frac{x-1}{n}\Big)
 \\&=1
 \end{align}
@@ -328,8 +328,8 @@ thats one down
 
 $$
 \begin{align}
-e&=\lim\limits_{n\to\infty}\Big(1-\frac{1}{n}\Big)^n
-\\\lim\limits_{n\to\infty}\Big(1-\frac{\lambda}{n}\Big)^n&=\lim\limits_{n\to\infty}\Big[\Big(1-\frac{1}{n/\lambda}\Big)^{-n/\lambda}\Big]^{-\lambda}
+e&=\lim\limits_{n\to\infty}\Big(1+\frac{1}{n}\Big)^n
+\\\lim\limits_{n\to\infty}\Big(1-\frac{\lambda}{n}\Big)^n&=\lim\limits_{n\to\infty}\Big[\Big(1+\frac{1}{-(n/\lambda)}\Big)^{-n/\lambda}\Big]^{-\lambda}
 \\&=e^{-\lambda}
 \end{align}
 $$
