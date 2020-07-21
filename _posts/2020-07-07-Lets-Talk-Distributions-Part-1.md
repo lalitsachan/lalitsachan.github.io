@@ -25,7 +25,7 @@ $$
 
 Where n is the number of values in the range of the distribution. A classic example which produces uniform distribution is throwing a fair dice. 🎲
 
-Each throw might result in any of the $ \{1,2,3,4,5,6\}$ on the top face with equal probability . So in this case 
+Each throw might result in any of the {$ \{1,2,3,4,5,6\}$} on the top face with equal probability . So in this case 
 
 $$
 P(X=x)=\frac{1}{6} \ \ \forall \ x \in \{1,2,3,4,5,6\}
@@ -39,9 +39,9 @@ Consider a gambling party where the host has gone bonkers and is asking guests t
 
 We can start by assuming there are 72 [ the number doesn't really matter ] people in the party . Since the dice is fair; we can assume that each of $\{1,2,3,4,5,6\}$ will be obtained by 12 guests. 
 
-* So the money lost by host  $ =12X6 + 12X 5 + 12X4 +12X3 +12X2 = \$ 240 $ 
-* money gained by host $=12X10 = \$120$
-* Overall money lost by host $= 240 - 120 = \$120$
+* So the money lost by host  $ {=12X6 + 12X 5 + 12X4 +12X3 +12X2 = \$ 240} $ 
+* money gained by host ${=12X10 = \$120}$
+* Overall money lost by host ${= 240 - 120 = \$120}$
 * Money lost per player $\frac{\$120}{72}=\$1.67$
 
 A simpler way of doing this will be to multiply probability of each outcome with the outcome and sum them. 
@@ -403,7 +403,7 @@ Of course the answer isn't that straight forward to come by.
 We know that, events are happening at the rate $\lambda$ per unit time. So, in $t$ time units ,  events will happen at the rate $\lambda t$
 
  Using Poisson distribution, probability of x events happening in next $t$ time units 
- 
+
 $$
 P(X=x)=\frac{e^{-\lambda t}*(\lambda t)^x}{!x}
 $$
