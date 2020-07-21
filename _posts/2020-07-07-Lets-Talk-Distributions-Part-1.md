@@ -39,9 +39,9 @@ Consider a gambling party where the host has gone bonkers and is asking guests t
 
 We can start by assuming there are 72 [ the number doesn't really matter ] people in the party . Since the dice is fair; we can assume that each of $\{1,2,3,4,5,6\}$ will be obtained by 12 guests. 
 
-* So the money lost by host  $ {=12X6 + 12X 5 + 12X4 +12X3 +12X2 = \$ 240} $ 
-* money gained by host ${=12X10 = \$120}$
-* Overall money lost by host ${= 240 - 120 = \$120}$
+* So the money lost by host  =12X6 + 12X 5 + 12X4 +12X3 +12X2 = $ 240
+* money gained by host =12X10 = $120
+* Overall money lost by host = 240 - 120 = $120
 * Money lost per player $\frac{\$120}{72}=\$1.67$
 
 A simpler way of doing this will be to multiply probability of each outcome with the outcome and sum them. 
