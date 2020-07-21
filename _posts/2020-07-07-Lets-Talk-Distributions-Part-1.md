@@ -22,9 +22,11 @@ Uniform distribution is where each value in the distribution has equal probabili
 $$
 P(X=x) = \frac{1}{n}
 $$
+
 Where n is the number of values in the range of the distribution. A classic example which produces uniform distribution is throwing a fair dice. 🎲
 
 Each throw might result in any of the $ \{1,2,3,4,5,6\}$ on the top face with equal probability . So in this case 
+
 $$
 P(X=x)=\frac{1}{6} \ \ \forall \ x \in \{1,2,3,4,5,6\}
 $$
@@ -47,12 +49,15 @@ A simpler way of doing this will be to multiply probability of each outcome with
 Average gain  $=-6*\frac{1}{6}-5*\frac{1}{6}-4*\frac{1}{6}-3**\frac{1}{6}-2*\frac{1}{6}+10*\frac{1}{6}=\$1.67$
 
 This is also known as expected value of a distribution [or mean]. A formal expression for the same will be 
+
 $$
 \mu = E[X] = \sum xP(X=x)
 $$
+
 Let's calculate mean of uniform distribution like this . Say distribution takes integer values in the interval $[a,b]$ with $n$ values in it. 
 
 [$b = a + (n-1)$], Since $b$ is the $n^{th}$ element . 
+
 $$
 \begin{align}
 \mu & = E[X]
@@ -64,6 +69,7 @@ $$
 \\ & =\frac{a+b}{2}
 \end{align}
 $$
+
 Before we proceed further I will mention here few algebraic properties of expectation which are easy to derive; so I am going to put them here without extensive proof.
 
 * $E[g(X)] = \sum g(x)P(X=x)$
@@ -71,6 +77,7 @@ Before we proceed further I will mention here few algebraic properties of expect
 * $E(aX+b) = aE(X)+b$
 
 Variance of a distribution is defined as expectation of $(X-\mu)^2$ . [remember variance was mean of squared deviations from the mean]
+
 $$
 \begin{align}
 Var(X)&=E[(X-\mu)^2]
@@ -80,7 +87,9 @@ Var(X)&=E[(X-\mu)^2]
 \\&=E[X^2]-(E[X])^2
 \end{align}
 $$
+
 Lets calculate variance of uniform distribution with this 
+
 $$
 \begin{align}
 E(X^2)&=[a^2+(a+1)^2+.......(a+n-1)^2]*\frac{1}{n}
@@ -92,6 +101,7 @@ E(X^2)&=[a^2+(a+1)^2+.......(a+n-1)^2]*\frac{1}{n}
 \\ & = \frac{(b-a)^2}{12}
 \end{align}
 $$
+
 I have skipped some algebraic gymnastic there. Do it yourself if it rubbed your marbles the wrong way. 
 
 For continuous distributions ; if the pdf is given as $f(x)$ then 
@@ -122,6 +132,7 @@ We get a call on our phone , we receive it or we don't . We are driving on the r
 And each of these outcomes have some associated probability . Like there is 90% chance of an advice being solid gold if given by an old dude while peeling an apple with a pocket knife and eating pieces right off the blade . Oddly specific but relatable.
 
 Formally we write :
+
 $$
 P(X=x) =
 \begin{cases}
@@ -164,6 +175,7 @@ Life is nothing but a sequence of countless Bernoulli Trials .
 During the pandemic lockdown, you have learnt to make absolutely killer cocktails. Probability of a person getting shitfaced drunk on the cocktail is $p$ . Let's say $n$ people attended your party once the lockdown opens , what are the chances that $x$ of them will have no memory of what happened that night ?
 
 $x$ is just number of guests . It can be made up of any $x$ guests out of $n$ . We can chose $x$ guests out of $n$ in ${}^{n}C_{x}$ ways. 
+
 $$
 \begin{align}
 {}^{n}C_{x} &= \frac{!n}{!x!(n-x)}
@@ -171,17 +183,23 @@ $$
 \\ \text{given  }!n &= n*n(n-1)\cdots2*1 
 \end{align}
 $$
+
 formally we can write [considering $q=1-p$]
+
 $$
 P(X=x) = {}^{n}C_{x} * p^x *q^{n-x}
 $$
+
 Before we get down to calculating mean and variance , let's get done with some mean looking maths involving binomial coefficients .
 
 We know that $(a+b)^n$ can be expanded using following expression involving binomial coefficients . 
+
 $$
 (a+b)^n = \sum\limits_{r=0}^{n}{}^{n}C_{r}a^r b^{n-r}
 $$
+
 Now to the mean maths; we are going to derive some results which will come in handy later.
+
 $$
 \begin{align}
 \sum\limits_{r=0}^{n} r *{}^{n}C_{r} * a^r *b^{n-r} &= a* \sum\limits_{r=0}^{n} r *{}^{n}C_{r} * a^{r-1} *b^{n-r}
@@ -272,15 +290,18 @@ I did not take this crazy sounding; sudden tangent in our discussion to play dow
 So this month of 5 accidents was essentially a huge collection of Bernoulli trials with a very small probability of success. Basically this value 5 is coming from a Binomial distribution with very large $n$ and very small $p$
 
 We'll call this 5 accidents/month to be rate of events and denote it with symbol $\lambda$
+
 $$
 \begin{align}
 \lambda&=np
 \\ p &= \frac{\lambda}{n}
 \end{align}
 $$
+
 Now with this information, someone asks you, can you tell me whats the probability that we'll see $x$ accidents next month [given that flow of vehicles through the junction remains similar and other traffic conditions also remain unchanged]. Let's try to answer that question in absence of information of both $n$ and $p$ . All that we have, is the rate $\lambda$ and hunch that $n$ is large and $p$ is small.
 
 But it still is a binomial distribution . [well for now at-least , but we are going in for the kill boys!]
+
 $$
 \begin{align}
 \lim\limits_{n\to\infty} P(X=x) &= \lim\limits_{n\to\infty}{}^{n}C_{x} * p^x *q^{n-x}
@@ -290,6 +311,7 @@ $$
 $$
 
 Ah i guess we are stuck now. We'll have to kill this beast in parts and then come back and put together it all.
+
 $$
 \begin{align}
 \lim\limits_{n\to\infty}\frac{!n}{!(n-x)}*\frac{1}{n^x} &= \frac{n*(n-1)*\cdots*(n-x+1)*(n-x)*\cdots2*1}{(n-x)*\cdots*2*1}*\frac{1}{n*n*\cdots*n}
@@ -297,7 +319,9 @@ $$
 \\&=1
 \end{align}
 $$
+
 thats one down 
+
 $$
 \begin{align}
 e&=\lim\limits_{n\to\infty}\Big(1-\frac{1}{n}\Big)^n
@@ -305,7 +329,9 @@ e&=\lim\limits_{n\to\infty}\Big(1-\frac{1}{n}\Big)^n
 \\&=e^{-\lambda}
 \end{align}
 $$
+
 the remaining guy is just a formality now
+
 $$
 \lim\limits_{n\to\infty}\Big(1-\frac{\lambda}{n}\Big)^{-x}=1^{-x}=1
 $$
@@ -373,28 +399,38 @@ Of course the answer isn't that straight forward to come by.
 We know that, events are happening at the rate $\lambda$ per unit time. So, in $t$ time units ,  events will happen at the rate $\lambda t$
 
  Using Poisson distribution, probability of x events happening in next $t$ time units 
+ 
 $$
 P(X=x)=\frac{e^{-\lambda t}*(\lambda t)^x}{!x}
 $$
+
 Whats the probability that no event will happen in next t time units?
+
 $$
 P(X=0)=e^{-\lambda t}
 $$
+
 Whats the probability that at-least 1 event will happen in t time units ?
+
 $$
 1-P(X=0) = 1-e^{-\lambda t}
 $$
+
 Hey, but thats cumulative probability or in other words 
+
 $$
 P(T\le t)=1-e^{-\lambda t}
 $$
+
 and if the distribution of $t$ was defined by function $f(t)$ , we could write 
+
 $$
 \begin{align}
 \int\limits_{t=0}^{t}f(t)dt &= 1-e^{-\lambda t}
 \\f(t)&=\lambda e^{-\lambda t}
 \end{align}
 $$
+
 And thats the exponential distribution. 
 
 Intuitively , by the looks of it , we can infer that if some events are happening at a fast rate [large $\lambda$], its going to be exponentially rare that you will get to see the next event after a very long time [high value of t will have exponentially diminishing probabilities]
@@ -409,27 +445,34 @@ $$
 $$
 
 Remember integration by parts ? Good for you if you said yes. I don't . So here is a reminder for all of us 
+
 $$
 \int u (\frac{dv}{dt})dt =uv -\int v \frac{du}{dt}dt
 $$
+
 In our expression earlier 
+
 $$
 \begin{align}
 u &= t
 \\\& \ \ v&=-\frac{e^{-\lambda t}}{\lambda} 
 \end{align}
 $$
+
 so we can rewrite that expression using integration by parts formula
+
 $$
 \begin{align}
 \mu &=\lambda\Big[-\frac{te^{-\lambda t}}{\lambda}\Biggr|_{0}^{\infty} +\int\limits_{0}^{\infty}\frac{e^{-\lambda t}}{\lambda}dt\Big]
 \end{align}
 $$
+
 Easiest and very intuitive to understand that expression $te^{-\lambda t}$ goes to 0 as $t \to \infty$ is to look at its plot 
 
 ![xexp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/xexp.jpg)
 
 so ,
+
 $$
 \begin{align}
 \mu &=\lambda \int\limits_{0}^{\infty}\frac{e^{-\lambda t}}{\lambda}dt
@@ -447,24 +490,29 @@ E[X^2]&=\int\limits_{0}^{\infty}t^2\lambda e^{-\lambda t}dt
 $$
 
 now here 
+
 $$
 \begin{align}
 u &= t^2
 \\\& \ \ v&=-\frac{e^{-\lambda t}}{\lambda} 
 \end{align}
 $$
+
 so,
+
 $$
 \begin{align}
 E[X^2]&=\int\limits_{0}^{\infty}t^2\lambda e^{-\lambda t}dt
 \\&=\lambda\Big[-\frac{t^2e^{-\lambda t}}{\lambda}\Biggr|_{0}^{\infty} +\int\limits_{0}^{\infty}\frac{te^{-\lambda t}}{\lambda}dt\Big]
 \end{align}
 $$
+
 Graph for $t^2e^{-\lambda t}$ looks like this 
 
 ![x2exp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/x2exp.jpg)
 
 Clearly the first term in the expression above is going to be simply 0 again.
+
 $$
 \begin{align}
 E[X^2]&=\int\limits_{0}^{\infty}t^2\lambda e^{-\lambda t}dt
@@ -473,7 +521,9 @@ E[X^2]&=\int\limits_{0}^{\infty}t^2\lambda e^{-\lambda t}dt
 \\&=\frac{2}{\lambda^2}
 \end{align}
 $$
+
 using this for variance 
+
 $$
 Var(X)=\frac{2}{\lambda^2}-\frac{1}{\lambda^2}=\frac{1}{\lambda^2}
 $$
