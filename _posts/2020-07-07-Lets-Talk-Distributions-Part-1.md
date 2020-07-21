@@ -471,7 +471,7 @@ $$
 \end{align}
 $$
 
-Easiest and very intuitive to understand that expression $te^{-\lambda t}$ goes to 0 as $t \to \infty$ is to look at its plot 
+Easiest and very intuitive way to understand, that expression $te^{-\lambda t}$ goes to 0 as $t \to \infty$;  is to look at its plot 
 
 ![xexp](/images/xexp.jpg)
 
