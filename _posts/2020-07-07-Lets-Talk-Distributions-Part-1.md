@@ -6,7 +6,7 @@ comments: true
 
 ---
 
- 
+ ![banner_dist](/images/banner_dist.jpg)
 
 All the distributions that we will discuss, can be categorised into two broad groups : `Discrete` and `Continuous` .
 
@@ -25,7 +25,7 @@ $$
 
 Where n is the number of values in the range of the distribution. A classic example which produces uniform distribution is throwing a fair dice. 🎲
 
-Each throw might result in any of the {$ \{1,2,3,4,5,6\}$} on the top face with equal probability . So in this case 
+Each throw might result in any of the $ \{1,2,3,4,5,6\}$ on the top face with equal probability . So in this case 
 
 $$
 P(X=x)=\frac{1}{6} \ \ \forall \ x \in \{1,2,3,4,5,6\}
@@ -39,17 +39,17 @@ Consider a gambling party where the host has gone bonkers and is asking guests t
 
 We can start by assuming there are 72 [ the number doesn't really matter ] people in the party . Since the dice is fair; we can assume that each of $\{1,2,3,4,5,6\}$ will be obtained by 12 guests. 
 
-* So the money lost by host  =12X6 + 12X 5 + 12X4 +12X3 +12X2 = $ 240
-* money gained by host =12X10 = $120
-* Overall money lost by host = 240 - 120 = $120
-* Money lost per player $\frac{\$120}{72}= \$ 1.67$
+* So the money lost by host  $ {=12X6 + 12X 5 + 12X4 +12X3 +12X2 = \$ 240} $ 
+* money gained by host $=12X10 = \$120$
+* Overall money lost by host $= 240 - 120 = \$120$
+* Money lost per player $\frac{\$120}{72}=\$1.67$
 
 A simpler way of doing this will be to multiply probability of each outcome with the outcome and sum them. 
 
 Average gain
 
 $$
-=-6*\frac{1}{6}-5*\frac{1}{6}-4*\frac{1}{6}-3*\frac{1}{6}-2*\frac{1}{6}+10*\frac{1}{6}=\$1.67
+=-6*\frac{1}{6}-5*\frac{1}{6}-4*\frac{1}{6}-3**\frac{1}{6}-2*\frac{1}{6}+10*\frac{1}{6}=\$1.67
 $$
 
 This is also known as expected value of a distribution [or mean]. A formal expression for the same will be 
@@ -318,7 +318,7 @@ Ah i guess we are stuck now. We'll have to kill this beast in parts and then com
 
 $$
 \begin{align}
-\lim\limits_{n\to\infty}\frac{!n}{!(n-x)}*\frac{1}{n^x} &= \frac{n*(n-1)*\cdots*(n-x+1)*(n-x)*\cdots2*1}{[(n-x)*\cdots*2*1]*[n*n*\cdots*n]}
+\lim\limits_{n\to\infty}\frac{!n}{!(n-x)}*\frac{1}{n^x} &= \frac{n*(n-1)*\cdots*(n-x+1)*(n-x)*\cdots2*1}{(n-x)*\cdots*2*1}*\frac{1}{n*n*\cdots*n}
 \\&=1*\Big(1-\frac{1}{n}\Big)*\Big(1-\frac{2}{n}\Big)*\cdots*\Big(1-\frac{x-1}{n}\Big)
 \\&=1
 \end{align}
