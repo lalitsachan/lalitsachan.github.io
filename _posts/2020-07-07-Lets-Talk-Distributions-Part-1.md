@@ -113,7 +113,7 @@ For continuous distributions ; if the pdf is given as $f(x)$ then
 
 #### What does it look like 
 
-![](/images/uniform_dis.png)
+![](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/uniform_dis.png)
 
 ## Bernoulli's Distribution [Discrete]
 
@@ -155,7 +155,7 @@ $$
 
 #### What does it look like
 
-![Bernoulli](/images/Bernoulli.png)
+![Bernoulli](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/Bernoulli.png)
 
 Life is nothing but a sequence of countless Bernoulli Trials .
 
@@ -228,7 +228,7 @@ $$
 
 #### What does it look like 
 
-![binom](/images/binom.png)
+![binom](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/binom.png)
 
 #### CDF [cumulative density function]
 
@@ -347,7 +347,7 @@ $$
 
 #### What does it look like
 
-![Poisson](/images/Poisson.png)
+![Poisson](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/Poisson.png)
 
 Notice, since variance is $\lambda$ , for higher values of $\lambda$ ; the distribution is becoming more spread out.
 
@@ -364,11 +364,11 @@ A McDonald's on an highway receives 20 orders per hour . If that exceeds 25, the
 
 ## Exponential Distribution [Continuous]
 
-You know; the fear [ father of all the questions, doubts and drugs ] is not always about how many. Its about, more often than not , when the first/next would happen. As in the  first heart attack , the next kiss, [an odd couple indeed], the first  covid positive patient and ofcourse; for the dinosaurus, the next big meteor.
+You know; the fear [ father of all the questions, doubts and drugs ] is not always about how many. It's about, more often than not , when the first/next would happen. As in the  first heart attack , the next kiss, [an odd couple indeed], the first  covid positive patient and of-course; for the dinosaurs, the next big meteor.
 
-Continuing with the example that we took above; what if the question that we want to answer is : `whats the probability that they will recieve their next order within 30 mins`
+Continuing with the example that we took above; what if the question that we want to answer is : `whats the probability that they will receive their next order within 30 mins`
 
-Of course the answer isnt that straight forward to come by.
+Of course the answer isn't that straight forward to come by.
 
 We know that, events are happening at the rate $\lambda$ per unit time. So, in $t$ time units ,  events will happen at the rate $\lambda t$
 
@@ -376,11 +376,11 @@ We know that, events are happening at the rate $\lambda$ per unit time. So, in $
 $$
 P(X=x)=\frac{e^{-\lambda t}*(\lambda t)^x}{!x}
 $$
-whats the probability that no event will happen in next t time units?
+Whats the probability that no event will happen in next t time units?
 $$
 P(X=0)=e^{-\lambda t}
 $$
-Whats the probability that atleast 1 event will happen in t time units ?
+Whats the probability that at-least 1 event will happen in t time units ?
 $$
 1-P(X=0) = 1-e^{-\lambda t}
 $$
@@ -408,7 +408,7 @@ $$
 \end{align}
 $$
 
-remember integration by parts ? good for you if you said yes. I dont . So here is a reminder for all of us 
+Remember integration by parts ? Good for you if you said yes. I don't . So here is a reminder for all of us 
 $$
 \int u (\frac{dv}{dt})dt =uv -\int v \frac{du}{dt}dt
 $$
@@ -427,7 +427,7 @@ $$
 $$
 Easiest and very intuitive to understand that expression $te^{-\lambda t}$ goes to 0 as $t \to \infty$ is to look at its plot 
 
-![xexp](/images/xexp.jpg)
+![xexp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/xexp.jpg)
 
 so ,
 $$
@@ -462,9 +462,9 @@ E[X^2]&=\int\limits_{0}^{\infty}t^2\lambda e^{-\lambda t}dt
 $$
 Graph for $t^2e^{-\lambda t}$ looks like this 
 
-![x2exp](/images/x2exp.jpg)
+![x2exp](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/x2exp.jpg)
 
-clearly the first term in the expression above is going to be simply 0 again.
+Clearly the first term in the expression above is going to be simply 0 again.
 $$
 \begin{align}
 E[X^2]&=\int\limits_{0}^{\infty}t^2\lambda e^{-\lambda t}dt
@@ -480,7 +480,7 @@ $$
 
 #### What does it look like
 
-![](/images/exp.png)
+![](/Users/lalitsachan/Dropbox/lalitsachan.github.io/images/exp.png)
 
 #### An example
 
@@ -493,6 +493,8 @@ Chef takes 5 minutes to make a burger . Whats the probability that chef will tak
 * Normal, Cauchy, Chi-Squared, t, F
 
 Part 2 coming soon!
+
+-- Lalit Sachan [https://www.linkedin.com/in/lalitsachan/]
 
 
 
