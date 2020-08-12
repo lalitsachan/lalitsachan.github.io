@@ -6,7 +6,9 @@ comments: true
 
 ---
 
- **<u>Why I am writing this</u>**: I have seen this too many times now; while discussing gradient boosting machines that; some ML practitioners; don't really understand what happens under the hood. Very often their understanding of boosting machines, starts with AdaBoost; and then kinda stops there. 
+ ![gbm](/images/gbm.png)
+
+**<u>Why I am writing this</u>**: I have seen this too many times now; while discussing gradient boosting machines that; some ML practitioners; don't really understand what happens under the hood. Very often their understanding of boosting machines, starts with AdaBoost; and then kinda stops there. 
 
 **<u>Who is this best suited for :</u>** If you know what boosting machines are; but lack clarity on what happens under the hood. 
 

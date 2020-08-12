@@ -6,6 +6,8 @@ comments: true
 
 ---
 
+![feat_eng](/images/feat_eng.jpg)
+
 For a good time I believed that you can't really give a long talk on feature engineering which will be relevant across multiple problem spaces. This belief originated from having seen people;  calling problem specific special treatment of data; feature engineering . However , over the years I have unconsciously gathered pretty standard ways of treating different kind of features which are applicable irrespective of the kind of problem that you are working with. This of course doesn't mean that there is no problem specific feature engineering , it simply implies that; you CAN have a good length discussion on generic feature engineering which applies well across different problems .
 
 Sequence of different tips and tricks mentioned here doesn't hold much meaning . I am simply writing/coding away things as and when I recall them here .
