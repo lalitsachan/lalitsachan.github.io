@@ -22,7 +22,7 @@ Few things that I have not discussed [so, if you are here for a complete discuss
 Few mathematical ideas (Anchor Points) that, i will not be elaborating in this post are given; as is, below :
 
 * **<u>Anchor Point 1</u>**: Gradient descent for parametric model requires us to change parameter by this amount in order to reach to the optimal value of cost function; starting at some random value of parameters :
-  *   $$\Delta\beta \rightarrow -\eta\frac{\delta C}{\delta\beta}$$  ,  where $$C$$ is the cost function 
+  *   $\Delta\beta \rightarrow -\eta\frac{\delta C}{\delta\beta}$ ,  where $C$ is the cost function 
 * **<u>Anchor Point 2</u>**: Regression Problems
   * Prediction model : $\hat{y}_i = F(X_i)$
   * cost function : $\sum(y_i - F(X_i))^2$
