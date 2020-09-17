@@ -293,16 +293,23 @@ $$
 \end{align}
 $$
 
-
 Summarising results that we will be using : 
 
-* $ \binom{y+r-1}{y} = (-1)^y*\binom{-r}{y} $ 
 
-* $$ (1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k $$
+$$
+\begin{align}
+& 1. \ \binom{y+r-1}{y} = (-1)^y*\binom{-r}{y} 
 
-* $ \sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}=rx(1-x)^{-r-1} $
+\\ & 2. \ (1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k 
 
-* $ \sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}=(rx+1)rx(1-x)^{-r-2} $
+\\ & 3. \   \sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}=rx(1-x)^{-r-1} 
+
+\\ & 4. \  \sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}=(rx+1)rx(1-x)^{-r-2} 
+\end{align}
+$$
+
+
+
 
 #### Mean 
 
