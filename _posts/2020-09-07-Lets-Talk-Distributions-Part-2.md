@@ -25,50 +25,37 @@ $$
 
 As we have been doing for other distributions , we'd like to calculate the mean and variance for geometric distribution also. As we have done earlier , before we jump into doing that, we'll derive some tricky maths results and use them later.
 
-$$
-\begin{align}
-
-\sum\limits_{k=1}^\infty k b^{k-1}a &=
-a\sum\limits_{k=1}^\infty \frac{d(b^k)}{db}
-\\ &= a\frac{d}{db}\sum\limits_{k=1}^\infty b^k
-\\ &= a\frac{d}{db}[\frac{b}{1-b}]
-\\&=a[\frac{1}{1-b}+\frac{b}{(1-b)^2}]
-\\&=\frac{a}{(1-b)^2}
-\end{align}
-$$
-
-one more 
+We will start with the expression for sum of an infitite geometric series . 
 
 $$
 \begin{align}
-
-\sum\limits_{k=1}^\infty k^2 b^{k-1}a &=  \sum\limits_{k=1}^\infty kb^{k-1}a +\sum\limits_{k=1}^\infty k(k-1)b^{k-1}a 
-\\&= \frac{a}{(1-b)^2} + ab\sum\limits_{k=2}^\infty k(k-1)b^{k-2}
-\\&= \frac{a}{(1-b)^2} + ab\sum\limits_{k=2}^\infty \frac{d^2b^{k}}{d^2b}
-
+\sum\limits_{k=0}^\infty b^k =\frac{1}{1-b}
 \end{align}
 $$
 
-note that , here the second expression sum is starting at $k=2$
+Lets differentiate on both sides $w.r.t. b$ once :
 
 $$
 \begin{align}
-\sum\limits_{k=1}^\infty k^2 b^{k-1}a &= \frac{a}{(1-b)^2} + ab\sum\limits_{k=2}^\infty \frac{d^2b^{k}}{d^2b}
-\\ &= \frac{a}{(1-b)^2} + ab \frac{d^2}{d^2b}\Big[\frac{b^2}{1-b}\Big]
-\\& =\frac{a}{(1-b)^2} + ab \frac{d}{db} \Big[\frac{2b}{1-b}+\frac{b^2}{(1-b)^2}\Big]
-\\& =\frac{a}{(1-b)^2} + ab \frac{d}{db}\Big[\frac{2b-b^2}{(1-b)^2}\Big]
-\\& =\frac{a}{(1-b)^2} + ab \Big[ \frac{2(1-b)}{(1-b)^2}+\frac{2b(2-b)}{(1-b)^3}\Big]
-\\& =\frac{a}{(1-b)^2} + ab \Big[ \frac{2(1-b)^2+2b(2-b)}{(1-b)^3}\Big]
-\\& =\frac{a}{(1-b)^2} + ab \Big[ \frac{2+2b^2-4b+4b-2b^2}{(1-b)^3}\Big]
-\\& =\frac{a-ab+2ab}{(1-b)^3}
-\\& =\frac{a(1+b)}{(1-b)^3}
+& \ \sum\limits_{k=1}^\infty kb^{k-1} =\frac{1}{(1-b)^2}
 \end{align}
 $$
+
+We'll do this once more after multiplying both sides by $b$ once :
+
+$$
+\begin{align}
+& \ \sum\limits_{k=1}^\infty kb^{k} =\frac{b}{(1-b)^2}
+\\ & \ \sum\limits_{k=1}^\infty k^2b^{k-1} =\frac{1}{(1-b)^2}+\frac{2b}{(1-b)^3}
+\\ & \ \sum\limits_{k=1}^\infty k^2b^{k-1} =\frac{1+b}{(1-b)^3}
+\end{align}
+$$
+
 
 in short, two results that we derived are :
 
-* $\sum\limits_{k=1}^\infty k b^{k-1}a =\frac{a}{(1-b)^2}$
-* $\sum\limits_{k=1}^\infty k^2 b^{k-1}a=\frac{a(1+b)}{(1-b)^3}$
+* $\sum\limits_{k=1}^\infty k b^{k-1} =\frac{1}{(1-b)^2}$
+* $\sum\limits_{k=1}^\infty k^2 b^{k-1}=\frac{(1+b)}{(1-b)^3}$
 
 #### mean
 
