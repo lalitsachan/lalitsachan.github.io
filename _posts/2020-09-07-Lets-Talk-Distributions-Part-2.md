@@ -244,7 +244,7 @@ $$
 f(x)=\sum_{k=0}^\infty f^{(k)}(a)\frac{(x-a)^k}{k!}
 $$
 
-Where $f^{(k)}$ is $k^{th}$ derivative of $f$ and $x\to a$. Now consider $a=0$ . That makes the above expression a maclaurin series [ putting the name here , so that you can go explore more if you are interested] . Since we are considering $a$ to be $0$ here , this will work for $x \to 0$ , or $|x| <1 $ .
+Where $ f^{(k)} $ is $ k^{th} $ derivative of $f$ and $x\to a$. Now consider $a=0$ . That makes the above expression a maclaurin series [ putting the name here , so that you can go explore more if you are interested] . Since we are considering $a$ to be $0$ here , this will work for $x \to 0$ , or $\lvert x \rvert <1 $ .
 
 $$
 f(x)=\sum_{k=0}^\infty f^{(k)}(0)\frac{x^k}{k!}
@@ -298,11 +298,11 @@ Summarising results that we will be using :
 
 * $ \binom{y+r-1}{y} = (-1)^y*\binom{-r}{y} $ 
 
-* $(1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k$
+* $ (1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k $
 
-* $\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}=rx(1-x)^{-r-1}$
+* $ \sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}=rx(1-x)^{-r-1} $
 
-* $\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}=(rx+1)rx(1-x)^{-r-2}$
+* $ \sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}=(rx+1)rx(1-x)^{-r-2} $
 
 #### Mean 
 
