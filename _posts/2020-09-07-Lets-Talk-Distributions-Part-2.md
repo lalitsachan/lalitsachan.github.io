@@ -55,6 +55,7 @@ $$
 \\& =\frac{a(1+b)}{(1-b)^3}
 \end{align}
 $$
+
 in short, two results that we derived are :
 
 * $\sum\limits_{k=1}^\infty k b^{k-1}a =\frac{a}{(1-b)^2}$
@@ -103,12 +104,16 @@ Notice that for low success scenarios , probability of early success is low , an
 In the scenarios we have not considered the case of finite population . Consider this question, if a city of 10000 residents has 200 doctors . Whats the probability that out of 100 randomly selected citizens , 10 are doctors .
 
 A generic formula to answer this question will consider, Population size = N, number of successes present in the population = M, Size of the sample being taken = n . then 
+
 $$
-P(X=x)=\frac{{}^{M}C_{x}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
+P(X=x)=\frac{{}^{M}C_{x}*{}^{(N-M)}C_{(n-x)}}{{}^{N}C_{n}}
 $$
-This is our hypergeometric distribution. note that there is a limit on value of x and n here , since the population is finite . $n\in [1,N]$ and $x\in [0,n]$
+
+
+This is our hypergeometric distribution. note that there is a limit on value of x and n here , since the population is finite . $n\in [1,N]$ and $x \in [0,n]$ .
 
 time for deriving maths results for using later 
+
 $$
 \begin{align}
 r*{}^{n}C_{r}&=\frac{r * n!}{r!* (n-r)!}
