@@ -139,8 +139,8 @@ The expression written inside the summation here is another hypergeometric distr
 
 $$
 \begin{align}
-E[X]&=\frac{M}{{}^{N}C_{n}}*{}^{N-1}C_{n-1}\sum\limits_{x=1}^{n}\frac{{}^{M-1}C_{x-1}*{}^{N-1-(M-1)}C_{n-1-(x-1)}}{{}^{N-1}C_{n-1}}
-\\&=\frac{M}{{}^{N}C_{n}}*{}^{N-1}C_{n-1}
+E[X]&=\frac{M}{\binom{N}{n}}*\binom{N-1}{n-1}\sum\limits_{x=1}^{n}\frac{\binom{M-1}{x-1}*\binom{N-1-(M-1)}{n-1-(x-1)}}{\binom{N-1}{n-1}}
+\\&=\frac{M}{\binom{N}{n}}*\binom{N-1}{n-1}
 \\&=\frac{M*n!*(N-n)!}{N!}*\frac{(N-1)!}{(n-1)!(N-n)!}
 \\&=\frac{M*n}{N}
 \end{align}
@@ -152,14 +152,14 @@ Now if you think about it , $\frac{M}{N}$ is the probability of success and the 
 
 $$
 \begin{align}
-E[X^2]&=\sum\limits_{x=1}^{n}\frac{x^2*{}^{M}C_{x}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
-\\ &= \sum\limits_{x=1}^{n}\frac{x*M*{}^{M-1}C_{x-1}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
-\\ &= \sum\limits_{x=1}^{n}\frac{(x-1+1)*M*{}^{M-1}C_{x-1}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
-\\&= \sum\limits_{x=1}^{n}\frac{(x-1)*M*{}^{M-1}C_{x-1}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}+\sum\limits_{x=1}^{n}\frac{M*{}^{M-1}C_{x-1}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
-\\&= \sum\limits_{x=1}^{n}\frac{M*(M-1){}^{M-2}C_{x-2}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
-+\frac{M*{}^{N-1}C_{n-1}}{{}^{N}C_{n}}\sum\limits_{x=1}^{n}\frac{{}^{M-1}C_{x-1}*{}^{N-M}C_{n-x}}{{}^{N-1}C_{n-1}}
-\\&= \frac{M*(M-1)*{}^{N-2}C_{n-2}}{{}^{N}C_{n}}\sum\limits_{x=1}^{n}\frac{{}^{M-2}C_{x-2}*{}^{N-2-(M-2)}C_{n-2-(x-2)}}{{}^{N-2}C_{n-2}}
-+\frac{M*{}^{N-1}C_{n-1}}{{}^{N}C_{n}}\sum\limits_{x=1}^{n}\frac{{}^{M-1}C_{x-1}*{}^{N-1-(M-1)}C_{n-1-(x-1)}}{{}^{N-1}C_{n-1}}
+E[X^2]&=\sum\limits_{x=1}^{n}\frac{x^2*\binom{M}{x}*\binom{N-M}{n-x}}{\binom{N}{n}}
+\\ &= \sum\limits_{x=1}^{n}\frac{x*M*\binom{M-1}{x-1}*\binom{N-M}{n-x}}{\binom{N}{n}}
+\\ &= \sum\limits_{x=1}^{n}\frac{(x-1+1)*M*\binom{M-1}{x-1}*\binom{N-M}{n-x}}{\binom{N}{n}}
+\\&= \sum\limits_{x=1}^{n}\frac{(x-1)*M*\binom{M-1}{x-1}*\binom{N-M}{n-x}}{\binom{N}{n}}+\sum\limits_{x=1}^{n}\frac{M*\binom{M-1}{x-1}*\binom{N-M}{n-x}}{\binom{N}{n}}
+\\&= \sum\limits_{x=1}^{n}\frac{M*(M-1)\binom{M-2}{x-2}*\binom{N-M}{n-x}}{\binom{N}{n}}
++\frac{M*\binom{N-1}{n-1}}{\binom{N}{n}}\sum\limits_{x=1}^{n}\frac{\binom{M-1}{x-1}*\binom{N-M}{n-x}}{\binom{N-1}{n-1}}
+\\&= \frac{M*(M-1)*\binom{N-2}{n-2}}{\binom{N}{n}}\sum\limits_{x=1}^{n}\frac{\binom{M-2}{x-2}*\binom{N-2-(M-2)}{n-2-(x-2)}}{\binom{N-2}{n-2}}
++\frac{M*\binom{N-1}{n-1}}{\binom{N}{n}}\sum\limits_{x=1}^{n}\frac{\binom{M-1}{x-1}*\binom{N-1-(M-1)}{n-1-(x-1)}}{\binom{N-1}{n-1}}
 \end{align}
 $$
 
@@ -168,10 +168,10 @@ The first summation is pmf of a hypergeometric distribution with parameters $N-2
 
 $$
 \begin{align}
-E[X^2]&= \frac{M*(M-1)*{}^{N-2}C_{n-2}}{{}^{N}C_{n}}\sum\limits_{x=1}^{n}\frac{{}^{M-2}C_{x-2}*{}^{N-2-(M-2)}C_{n-2-(x-2)}}{{}^{N-2}C_{n-2}}
-+\frac{M*{}^{N-1}C_{n-1}}{{}^{N}C_{n}}\sum\limits_{x=1}^{n}\frac{{}^{M-1}C_{x-1}*{}^{N-1-(M-1)}C_{n-1-(x-1)}}{{}^{N-1}C_{n-1}}
-\\&=\frac{M*(M-1)*{}^{N-2}C_{n-2}}{{}^{N}C_{n}}
-+\frac{M*{}^{N-1}C_{n-1}}{{}^{N}C_{n}}
+E[X^2]&= \frac{M*(M-1)*\binom{N-2}{n-2}}{\binom{N}{n}}\sum\limits_{x=1}^{n}\frac{\binom{M-2}{x-2}*\binom{N-2-(M-2)}{n-2-(x-2)}}{\binom{N-2}{n-2}}
++\frac{M*\binom{N-1}{n-1}}{\binom{N}{n}}\sum\limits_{x=1}^{n}\frac{\binom{M-1}{x-1}*\binom{N-1-(M-1)}{n-1-(x-1)}}{\binom{N-1}{n-1}}
+\\&=\frac{M*(M-1)*\binom{N-2}{n-2}}{\binom{N}{n}}
++\frac{M*\binom{N-1}{n-1}}{\binom{N}{n}}
 \\&=\frac{M*(M-1)*(N-2)!n!(N-n)!}{(n-2)!(N-n)!N!}+\frac{M*(N-1)!n!(N-n)!}{N!(n-1)!(N-n)!}
 \\&=\frac{M*(M-1)*n*(n-1)}{N*(N-1)}+\frac{M*n}{N}
 \\&=\frac{M*n}{N}\Big[\frac{(M-1)*(n-1)}{N-1}+1\Big]
@@ -202,7 +202,7 @@ I am skipping the `what does it look like` section here as the visuals are mostl
 
  Recall that, binomial variable was defined as number of successes you might get to see in fixed number of trials . What if we now want to consider a scenario where number of successes are fixed and we would like to know, how many trials it will take to reach there .
 $$
-P(X=x)={}^{x-1}C_{r-1}*p^r*q^{(x-r)}
+P(X=x)=\binom{x-1}{r-1}*p^r*q^{(x-r)}
 $$
 
 There is another more common expression for this distribution; which makes further calculations rather convenient and thats the expression where the distribution derives its name from .Instead of looking at number of trials required [say $x$] to reach $r$ successes, we'll use number of failures [say $y$] before $r^{th}$ success . This relationship holds between this $x$ and $y$ .
@@ -211,17 +211,17 @@ y=x-r
 $$
 and pmf for this variable is given by
 $$
-P(Y=y)={}^{y+r-1}C_{y}*p^r*q^{y}
+P(Y=y)=\binom{y+r-1}{y}*p^r*q^{y}
 $$
 
 The binomial coefficient that you see here appears in negative binomial expressions , that is where the name comes from. Next we are going to derive some maths to make our job easy later while calculating mean and variance of these distributions . 
 
 $$
 \begin{align}
-{}^{y+r-1}C_{y}&=\frac{(y+r-1)(y+r-2)(y+r-3)\cdots r(r-1)(r-2)\cdots3*2*1}{y!(r-1)!}
+\binom{y+r-1}{y}&=\frac{(y+r-1)(y+r-2)(y+r-3)\cdots r(r-1)(r-2)\cdots3*2*1}{y!(r-1)!}
 \\&=\frac{(y+r-1)(y+r-2)(y+r-3)\cdots r}{y!}
 \\&=(-1)^y\frac{(-r)(-r-1)\cdots(-r-(y-1))}{y!}
-\\&=(-1)^y*{}^{-r}C_{y}
+\\&=(-1)^y*\binom{-r}{y}
 \end{align}
 $$
 
@@ -248,44 +248,44 @@ Using the maclaurin series given above we can write :
 $$
 \begin{align}
 (1-x)^{-r}&=\sum_{k=0}^\infty (-1)^k \frac{(-r)*(-r-1)*(-r-2)\cdots*(-r-(k-1))}{k!}*x^k
-\\ &=\sum\limits_{k=0}^\infty (-1)^k *{}^{-r}C_{k}*x^k
+\\ &=\sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k
 \end{align}
 $$
 Lets differentiate this $w.r.t. \ x$ once on both sides 
 $$
 \begin{align}
-& \ r(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*{}^{-r}C_{k}*x^{k-1}
-\\ & \ rx(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*{}^{-r}C_{k}*x^{k}
+& \ r(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k-1}
+\\ & \ rx(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}
 \end{align}
 $$
 Once more :
 $$
 \begin{align}
-& \ r(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*{}^{-r}C_{k}*x^{k-1}
-\\ & \ r*(r+1)*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k*(k-1)*{}^{-r}C_{k}*x^{k-2}
-\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k*(k-1)*{}^{-r}C_{k}*x^{k}
-\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*{}^{-r}C_{k}*x^{k}-\sum\limits_{k=0}^\infty (-1)^k *k*{}^{-r}C_{k}*x^{k}
-\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}+r*x*(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k^2*{}^{-r}C_{k}*x^{k}
-\\ & \ (rx+x+1-x)rx(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*{}^{-r}C_{k}*x^{k}
-\\ & \ (rx+1)rx(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*{}^{-r}C_{k}*x^{k}
+& \ r(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k-1}
+\\ & \ r*(r+1)*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k*(k-1)*\binom{-r}{k}*x^{k-2}
+\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k*(k-1)*\binom{-r}{k}*x^{k}
+\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}-\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}
+\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}+r*x*(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
+\\ & \ (rx+x+1-x)rx(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
+\\ & \ (rx+1)rx(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
 \end{align}
 $$
 
 
 Summarising results that we will be using : 
 
-* $ {}^{y+r-1}C_{y} = (-1)^y*{}^{-r}C_{y} $ 
-* $(1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *{}^{-r}C_{k}*x^k$
-* $\sum\limits_{k=0}^\infty (-1)^k *k*{}^{-r}C_{k}*x^{k}=rx(1-x)^{-r-1}$
-* $\sum\limits_{k=0}^\infty (-1)^k *k^2*{}^{-r}C_{k}*x^{k}=(rx+1)rx(1-x)^{-r-2}$
+* $ \binom{y+r-1}{y} = (-1)^y*\binom{-r}{y} $ 
+* $(1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k$
+* $\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}=rx(1-x)^{-r-1}$
+* $\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}=(rx+1)rx(1-x)^{-r-2}$
 
 #### Mean 
 
 $$
 \begin{align}
-E[Y]&=\sum\limits_{y=0}^\infty y*{}^{y+r-1}C_{y}*p^r*q^{y}
-\\&=\sum\limits_{y=0}^\infty (-1)^{y}*y*{}^{-r}C_{y}*p^r*q^{y}
-\\&=p^r\sum\limits_{y=0}^\infty (-1)^{y}*y*{}^{-r}C_{y}*q^{y}
+E[Y]&=\sum\limits_{y=0}^\infty y*\binom{y+r-1}{y}*p^r*q^{y}
+\\&=\sum\limits_{y=0}^\infty (-1)^{y}*y*\binom{-r}{y}*p^r*q^{y}
+\\&=p^r\sum\limits_{y=0}^\infty (-1)^{y}*y*\binom{-r}{y}*q^{y}
 \\&=p^r*r*q(1-q)^{-r-1}=p^r*r*q*p^{-r-1}=\frac{rq}{p}
 \end{align}
 $$
@@ -298,9 +298,9 @@ If you need to hit the bullseye at-least 3 times in the same night to appear on 
 
 $$
 \begin{align}
-E[Y^2]&=\sum\limits_{y=0}^\infty y^2*{}^{y+r-1}C_{y}*p^r*q^{y}
-\\&=p^r\sum\limits_{y=0}^\infty y^2*{}^{y+r-1}C_{y}*q^{y}
-\\&=p^r\sum\limits_{y=0}^\infty (-1)^y*y^2*{}^{-r}C_{y}*q^{y}
+E[Y^2]&=\sum\limits_{y=0}^\infty y^2*\binom{y+r-1}{y}*p^r*q^{y}
+\\&=p^r\sum\limits_{y=0}^\infty y^2*\binom{y+r-1}{y}*q^{y}
+\\&=p^r\sum\limits_{y=0}^\infty (-1)^y*y^2*\binom{-r}{y}*q^{y}
 \\&=p^r(rq+1)*r*q*p^{-r-2}
 \\&=(rq+1)\frac{rq}{p^2}
 \end{align}
