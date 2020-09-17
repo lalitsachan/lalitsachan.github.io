@@ -50,7 +50,7 @@ Average gain
 
 $$
 =-6*\frac{1}{6}-5*\frac{1}{6}-4*\frac{1}{6}-3**\frac{1}{6}-2*\frac{1}{6}+10*\frac{1}{6}=\$1.67
-$$
+$$$
 
 This is also known as expected value of a distribution [or mean]. A formal expression for the same will be 
 

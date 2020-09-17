@@ -106,7 +106,7 @@ In the scenarios we have not considered the case of finite population . Consider
 A generic formula to answer this question will consider, Population size = N, number of successes present in the population = M, Size of the sample being taken = n . then 
 
 $$
-P(X=x)=\frac{{}^{M}C_{x}*{}^{(N-M)}C_{(n-x)}}{{}^{N}C_{n}}
+P(X=x)=\frac{\binom{M}{x}*\binom{N-M}{n-x}}{\binom{N}{n}}
 $$
 
 
@@ -116,9 +116,9 @@ time for deriving maths results for using later
 
 $$
 \begin{align}
-r*{}^{n}C_{r}&=\frac{r * n!}{r!* (n-r)!}
+r*\binom{n}{r}&=\frac{r * n!}{r!* (n-r)!}
 \\ &=\frac {n*(n-1)!}{(r-1)!(n-1-(r-1))!}
-\\&=n*{}^{n-1}C_{r-1}
+\\&=n*\binom{n-1}{r-1}
 \end{align}
 $$
 
@@ -127,14 +127,16 @@ $$
 
 $$
 \begin{align}
-E[X]&=\sum\limits_{x=1}^{n}\frac{x*{}^{M}C_{x}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
-\\ &=\sum\limits_{x=1}^{n}\frac{M*{}^{M-1}C_{x-1}*{}^{N-M}C_{n-x}}{{}^{N}C_{n}}
-\\&=\sum\limits_{x=1}^{n}\frac{M*{}^{M-1}C_{x-1}*{}^{N-1-(M-1)}C_{n-1-(x-1)}}{{}^{N}C_{n}}
-\\ &=\frac{M}{{}^{N}C_{n}}*{}^{N-1}C_{n-1}\sum\limits_{x=1}^{n}\frac{{}^{M-1}C_{x-1}*{}^{N-1-(M-1)}C_{n-1-(x-1)}}{{}^{N-1}C_{n-1}}
+
+E[X]&=\sum\limits_{x=1}^{n}\frac{x*\binom{M}{x}*\binom{N-M}{n-x}}{\binom{N}{n}}
+\\ &=\sum\limits_{x=1}^{n}\frac{M*\binom{M-1}{x-1}*\binom{N-M}{n-x}}{\binom{N}{n}}
+\\&=\sum\limits_{x=1}^{n}\frac{M*\binom{M-1}{x-1}*\binom{N-1-(M-1)}{n-1-(x-1)}}{\binom{N}{n}}
+\\ &=\frac{M}{\binom{N}{n}}*\binom{N-1}{n-1}\sum\limits_{x=1}^{n}\frac{\binom{M-1}{x-1}*\binom{N-1-(M-1)}{n-1-(x-1)}}{\binom{N-1}{n-1}}
 \end{align}
 $$
 
 The expression written inside the summation here is another hypergeometric distribution with parameters $N-1$ , $M-1$ and $n-1$ . This pmf summed over all values of $x$ will simply be 1.
+
 $$
 \begin{align}
 E[X]&=\frac{M}{{}^{N}C_{n}}*{}^{N-1}C_{n-1}\sum\limits_{x=1}^{n}\frac{{}^{M-1}C_{x-1}*{}^{N-1-(M-1)}C_{n-1-(x-1)}}{{}^{N-1}C_{n-1}}
@@ -143,6 +145,7 @@ E[X]&=\frac{M}{{}^{N}C_{n}}*{}^{N-1}C_{n-1}\sum\limits_{x=1}^{n}\frac{{}^{M-1}C_
 \\&=\frac{M*n}{N}
 \end{align}
 $$
+
 Now if you think about it , $\frac{M}{N}$ is the probability of success and the result that you see above is simply $np$ , same as what we got for binomial distribution .
 
 #### Variance
@@ -210,7 +213,9 @@ and pmf for this variable is given by
 $$
 P(Y=y)={}^{y+r-1}C_{y}*p^r*q^{y}
 $$
+
 The binomial coefficient that you see here appears in negative binomial expressions , that is where the name comes from. Next we are going to derive some maths to make our job easy later while calculating mean and variance of these distributions . 
+
 $$
 \begin{align}
 {}^{y+r-1}C_{y}&=\frac{(y+r-1)(y+r-2)(y+r-3)\cdots r(r-1)(r-2)\cdots3*2*1}{y!(r-1)!}
@@ -267,7 +272,7 @@ $$
 $$
 
 
-Summarising results that we'll be using : 
+Summarising results that we will be using : 
 
 * $ {}^{y+r-1}C_{y} = (-1)^y*{}^{-r}C_{y} $ 
 * $(1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *{}^{-r}C_{k}*x^k$
