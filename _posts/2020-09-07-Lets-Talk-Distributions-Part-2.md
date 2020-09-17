@@ -186,6 +186,7 @@ E[X^2]&= \frac{M*(M-1)*\binom{N-2}{n-2}}{\binom{N}{n}}\sum\limits_{x=1}^{n}\frac
 $$
 
 Now that we have managed to get this , lets go to the variance 
+
 $$
 \begin{align}
 Var(X)&=E[X^2]-(E[X])^2
@@ -208,15 +209,19 @@ I am skipping the `what does it look like` section here as the visuals are mostl
 ## Negative Binomial Distribution
 
  Recall that, binomial variable was defined as number of successes you might get to see in fixed number of trials . What if we now want to consider a scenario where number of successes are fixed and we would like to know, how many trials it will take to reach there .
+
 $$
 P(X=x)=\binom{x-1}{r-1}*p^r*q^{(x-r)}
 $$
 
 There is another more common expression for this distribution; which makes further calculations rather convenient and thats the expression where the distribution derives its name from .Instead of looking at number of trials required [say $x$] to reach $r$ successes, we'll use number of failures [say $y$] before $r^{th}$ success . This relationship holds between this $x$ and $y$ .
+
 $$
 y=x-r
 $$
+
 and pmf for this variable is given by
+
 $$
 P(Y=y)=\binom{y+r-1}{y}*p^r*q^{y}
 $$
@@ -234,16 +239,20 @@ $$
 
 
 Next bit we will start with Taylor's expansion of a function :
+
 $$
 f(x)=\sum_{k=0}^\infty f^{(k)}(a)\frac{(x-a)^k}{k!}
 $$
+
 Where $f^{(k)}$ is $k^{th}$ derivative of $f$ and $x\to a$. Now consider $a=0$ . That makes the above expression a maclaurin series [ putting the name here , so that you can go explore more if you are interested] . Since we are considering $a$ to be $0$ here , this will work for $x \to 0$ , or $|x| <1 $ .
+
 $$
 f(x)=\sum_{k=0}^\infty f^{(k)}(0)\frac{x^k}{k!}
 $$
 
 
 Lets consider a special function to use this for :
+
 $$
 \begin{align}
 & 1. \ f(x)=(1-x)^{-r}
@@ -251,21 +260,27 @@ $$
 \\& 3. \ f^{(k)}(0) =(-1)^k (-r)*(-r-1)*(-r-2)\cdots*(-r-(k-1))
 \end{align}
 $$
+
 Using the maclaurin series given above we can write : 
+
 $$
 \begin{align}
 (1-x)^{-r}&=\sum_{k=0}^\infty (-1)^k \frac{(-r)*(-r-1)*(-r-2)\cdots*(-r-(k-1))}{k!}*x^k
 \\ &=\sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k
 \end{align}
 $$
+
 Lets differentiate this $w.r.t. \ x$ once on both sides 
+
 $$
 \begin{align}
 & \ r(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k-1}
 \\ & \ rx(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}
 \end{align}
 $$
+
 Once more :
+
 $$
 \begin{align}
 & \ r(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k-1}
@@ -282,8 +297,11 @@ $$
 Summarising results that we will be using : 
 
 * $ \binom{y+r-1}{y} = (-1)^y*\binom{-r}{y} $ 
+
 * $(1-x)^{-r} = \sum\limits_{k=0}^\infty (-1)^k *\binom{-r}{k}*x^k$
+
 * $\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}=rx(1-x)^{-r-1}$
+
 * $\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}=(rx+1)rx(1-x)^{-r-2}$
 
 #### Mean 
