@@ -108,7 +108,7 @@ Notice that for low success scenarios , probability of early success is low , an
 
 ## HyperGeometric Distribution
 
-In the scenarios we have not considered the case of finite population . Consider this question, if a city of 10000 residents has 200 doctors . Whats the probability that out of 100 randomly selected citizens , 10 are doctors .
+In the scenarios discussed so far, we have not considered the case of finite population . Consider this question, if a city of 10000 residents has 200 doctors . Whats the probability that out of 100 randomly selected citizens , 10 are doctors .
 
 A generic formula to answer this question will consider, Population size = N, number of successes present in the population = M, Size of the sample being taken = n . then 
 
