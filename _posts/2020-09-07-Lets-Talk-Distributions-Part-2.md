@@ -9,6 +9,8 @@ comments: true
 
  ![](/images/banner_dist2.png)
 
+[Part1](https://lalitsachan.github.io/2020/07/07/Lets-Talk-Distributions-Part-1/)
+
 In first part of this series we saw many distributions which arise as some variations of collection of Bernoulli trials ; binomial distribution . I mention this to make you realise that distributions are nothing but tools to make probability calculations easy and handy . The same way you could probably derive the derivative of $\sin{x}$ to be $\cos{x}$ using the first principle every time you needed it ; but its far easier to simply use the pre-derived formulae . In essence , distributions are pre-done complex probability calculations which can then be used to do many useful things; without starting from scratch . 
 
 We'll continue our journey  to find other distributions arising from variations of binomial distribution. Starting with Geometric Distribution 
