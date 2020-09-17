@@ -163,7 +163,7 @@ mp=function(r,p,xlim,ylim,color){
   d=data.frame(x=x)
   plot=ggplot(d,aes(x=x))+
     geom_histogram(bins=300,fill=color,color=color,aes(y=..count../sum(..count..)))+
-    ylab(paste0('NegBinom(',r,',',0.1,')'))+xlab('X')+scale_x_continuous(limits=c(0,xlim))+scale_y_continuous(limits=c(0,ylim))
+    ylab(paste0('NegBinom(',r,',',p,')'))+xlab('X')+scale_x_continuous(limits=c(0,xlim))+scale_y_continuous(limits=c(0,ylim))
   return(plot)
 }
 
