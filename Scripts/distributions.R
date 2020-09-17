@@ -123,3 +123,71 @@ p3=ggplot(d,aes(x=x))+
   ylab('Exp(lambda=10)')+xlab('X')+scale_x_continuous(limits=c(0,10))
 p3
 
+# gemoteric 
+
+x=rgeom(10000,0.1)
+d=data.frame(x=x)
+p1=ggplot(d,aes(x=x))+
+  geom_histogram(bins=300,fill='aquamarine2',color='aquamarine2',aes(y=..count../sum(..count..)))+
+  ylab('Geom(p=0.1)')+xlab('X')+scale_x_continuous(limits=c(0,70))+scale_y_continuous(limits=c(0,.3))
+p1
+
+x=rgeom(10000,0.2)
+d=data.frame(x=x)
+p2=ggplot(d,aes(x=x))+
+  geom_histogram(bins=300,fill='skyblue2',color='skyblue2',aes(y=..count../sum(..count..)))+
+  ylab('Geom(p=0.2)')+xlab('X')+scale_x_continuous(limits=c(0,70))+scale_y_continuous(limits=c(0,.3))
+p2
+
+
+x=rgeom(10000,0.5)
+d=data.frame(x=x)
+p3=ggplot(d,aes(x=x))+
+  geom_histogram(bins=300,fill='palevioletred2',color='palevioletred2',aes(y=..count../sum(..count..)))+
+  ylab('Geom(p=0.5)')+xlab('X')+scale_x_continuous(limits=c(0,70))+scale_y_continuous(limits=c(0,.3))
+p3
+
+multiplot(p1,p2,p3)
+
+# geometric distribution variance 
+
+x=runif(100,min=0,max=0.8)
+y=x/((1-x)^2)
+
+qplot(x,y)
+
+# negative binomial 
+
+mp=function(r,p,xlim,ylim){
+  x=rnbinom(10000,r,p)
+  d=data.frame(x=x)
+  plot=ggplot(d,aes(x=x))+
+    geom_histogram(bins=300,fill='aquamarine2',color='aquamarine2',aes(y=..count../sum(..count..)))+
+    ylab(paste0('NegBinom(',r,',',0.1,')'))+xlab('X')+scale_x_continuous(limits=c(0,xlim))+scale_y_continuous(limits=c(0,ylim))
+  return(plot)
+}
+
+p1=mp()
+x=rnbinom(10000,3,0.1)
+d=data.frame(x=x)
+p1=ggplot(d,aes(x=x))+
+  geom_histogram(bins=300,fill='aquamarine2',color='aquamarine2',aes(y=..count../sum(..count..)))+
+  ylab('NegBinom(3,0.1)')+xlab('X')+scale_x_continuous(limits=c(0,50))+scale_y_continuous(limits=c(0,.25))
+p1
+
+x=rnbinom(10000,3,0.2)
+d=data.frame(x=x)
+p2=ggplot(d,aes(x=x))+
+  geom_histogram(bins=300,fill='skyblue2',color='skyblue2',aes(y=..count../sum(..count..)))+
+  ylab('NegBinom(3,0.2)')+xlab('X')+scale_x_continuous(limits=c(0,50))+scale_y_continuous(limits=c(0,.25))
+p2
+
+
+x=rnbinom(10000,3,0.5)
+d=data.frame(x=x)
+p3=ggplot(d,aes(x=x))+
+  geom_histogram(bins=300,fill='palevioletred2',color='palevioletred2',aes(y=..count../sum(..count..)))+
+  ylab('NegBinom(3,0.5)')+xlab('X')+scale_x_continuous(limits=c(0,50))+scale_y_continuous(limits=c(0,.25))
+p3
+
+multiplot(p1,p2,p3)
