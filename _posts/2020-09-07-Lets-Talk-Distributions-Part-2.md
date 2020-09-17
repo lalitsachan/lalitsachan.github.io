@@ -285,13 +285,10 @@ Once more :
 
 $$
 \begin{align}
-& \ r(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k-1}
-\\ & \ r*(r+1)*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k*(k-1)*\binom{-r}{k}*x^{k-2}
-\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k*(k-1)*\binom{-r}{k}*x^{k}
-\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}-\sum\limits_{k=0}^\infty (-1)^k *k*\binom{-r}{k}*x^{k}
-\\ & \ r*(r+1)*x^2*(1-x)^{-r-2}+r*x*(1-x)^{-r-1}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
-\\ & \ (rx+x+1-x)rx(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
-\\ & \ (rx+1)rx(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
+& \ r(1-x)^{-r-1}+rx(r+1)(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k-1}
+\\& \ rx(1-x)^{-r-1}+rx^2(r+1)(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
+\\& \ rx(1-x+rx+x)(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
+\\& \ rx(rx+1)(1-x)^{-r-2}=\sum\limits_{k=0}^\infty (-1)^k *k^2*\binom{-r}{k}*x^{k}
 \end{align}
 $$
 
