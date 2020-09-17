@@ -110,7 +110,7 @@ P(X=x)=\frac{{}^{M}C_{x}*{}^{(N-M)}C_{(n-x)}}{{}^{N}C_{n}}
 $$
 
 
-This is our hypergeometric distribution. note that there is a limit on value of x and n here , since the population is finite . $n\in [1,N]$ and $x \in [0,n]$ .
+This is our hypergeometric distribution. note that there is a limit on value of $x$ and $n$ here , since the population is finite . $n\in [1,N]$ and $x \in [0,n]$ .
 
 time for deriving maths results for using later 
 
