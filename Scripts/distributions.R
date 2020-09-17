@@ -158,36 +158,31 @@ qplot(x,y)
 
 # negative binomial 
 
-mp=function(r,p,xlim,ylim){
+mp=function(r,p,xlim,ylim,color){
   x=rnbinom(10000,r,p)
   d=data.frame(x=x)
   plot=ggplot(d,aes(x=x))+
-    geom_histogram(bins=300,fill='aquamarine2',color='aquamarine2',aes(y=..count../sum(..count..)))+
+    geom_histogram(bins=300,fill=color,color=color,aes(y=..count../sum(..count..)))+
     ylab(paste0('NegBinom(',r,',',0.1,')'))+xlab('X')+scale_x_continuous(limits=c(0,xlim))+scale_y_continuous(limits=c(0,ylim))
   return(plot)
 }
 
-p1=mp()
-x=rnbinom(10000,3,0.1)
-d=data.frame(x=x)
-p1=ggplot(d,aes(x=x))+
-  geom_histogram(bins=300,fill='aquamarine2',color='aquamarine2',aes(y=..count../sum(..count..)))+
-  ylab('NegBinom(3,0.1)')+xlab('X')+scale_x_continuous(limits=c(0,50))+scale_y_continuous(limits=c(0,.25))
-p1
+p1=mp(3,0.1,50,0.20,'aquamarine2')
+p2=mp(3,0.2,50,0.20,'skyblue2')
+p3=mp(3,0.5,50,0.20,'palevioletred2')
 
-x=rnbinom(10000,3,0.2)
-d=data.frame(x=x)
-p2=ggplot(d,aes(x=x))+
-  geom_histogram(bins=300,fill='skyblue2',color='skyblue2',aes(y=..count../sum(..count..)))+
-  ylab('NegBinom(3,0.2)')+xlab('X')+scale_x_continuous(limits=c(0,50))+scale_y_continuous(limits=c(0,.25))
-p2
+p4=mp(6,0.1,50,0.20,'aquamarine2')
+p5=mp(6,0.2,50,0.20,'skyblue2')
+p6=mp(6,0.5,50,0.20,'palevioletred2')
 
+p7=mp(9,0.1,50,0.20,'aquamarine2')
+p8=mp(9,0.2,50,0.20,'skyblue2')
+p9=mp(9,0.5,50,0.20,'palevioletred2')
 
-x=rnbinom(10000,3,0.5)
-d=data.frame(x=x)
-p3=ggplot(d,aes(x=x))+
-  geom_histogram(bins=300,fill='palevioletred2',color='palevioletred2',aes(y=..count../sum(..count..)))+
-  ylab('NegBinom(3,0.5)')+xlab('X')+scale_x_continuous(limits=c(0,50))+scale_y_continuous(limits=c(0,.25))
-p3
 
 multiplot(p1,p2,p3)
+multiplot(p4,p5,p6)
+multiplot(p7,p8,p9)
+
+multiplot(p1,p2,p3,p4,p5,p6,p7,p8,p9,cols=3)
+
