@@ -16,10 +16,13 @@ We'll continue our journey  to find other distributions arising from variations 
 ## Geometric Distribution 
 
 Imagine that there is 10% chance that you can hit the bulls eye in a game of darts [ or make a profit on a share buy, sadly the same thing these days ]. Whats the probability that you'll go without hitting the bulls eye for 6 consecutive throws , before eventually hitting the prize shot . Thats geometric distribution for you. Probability of $(K-1)$ consecutive failures before you see success in the $K^{th}$ trial  . 
+
 $$
 P(x=K) = q^{k-1}p
 $$
+
 As we have been doing for other distributions , we'd like to calculate the mean and variance for geometric distribution also. As we have done earlier , before we jump into doing that, we'll derive some tricky maths results and use them later.
+
 $$
 \begin{align}
 
@@ -31,7 +34,9 @@ a\sum\limits_{k=1}^\infty \frac{d(b^k)}{db}
 \\&=\frac{a}{(1-b)^2}
 \end{align}
 $$
+
 one more 
+
 $$
 \begin{align}
 
@@ -41,7 +46,9 @@ $$
 
 \end{align}
 $$
+
 note that , here the second expression sum is starting at $k=2$
+
 $$
 \begin{align}
 \sum\limits_{k=1}^\infty k^2 b^{k-1}a &= \frac{a}{(1-b)^2} + ab\sum\limits_{k=2}^\infty \frac{d^2b^{k}}{d^2b}
